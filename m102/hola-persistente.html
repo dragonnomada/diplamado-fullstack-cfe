@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hola Persistente</title>
+</head>
+<body>
+  <h1 id="title">Título aquí</h1>
+  <h2 id="subtitle">Subtítulo aquí</h2>
+  <button onclick="configurar()">Configurar</button>
+
+  <script>
+    function configurar() {
+       const titulo = prompt("Título:")
+       const subtitulo = prompt("Subtítulo:")
+       document.getElementById("title").innerText = titulo
+       document.getElementById("subtitle").innerText = subtitulo
+
+       const data = { "titulo": titulo, "subtitulo": subtitulo }
+
+       const textoJSON = JSON.stringify(data) // OBJ data -> TEXTO JSON
+
+       console.log(textoJSON)
+
+       localStorage.setItem("data", textoJSON)
+    }
+  </script>
+
+  <script>
+    window.onload = function() {
+       const textoJSON = localStorage.getItem("data")
+       if (textoJSON) {
+          const data = JSON.parse(textoJSON) // TEXTO JSON -> OBJ data
+          document.getElementById("title").innerText = data.titulo
+          document.getElementById("subtitle").innerText = data.subtitulo
+       }
+    }
+  </script>
+
+</body>
+</html>
