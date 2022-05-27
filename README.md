@@ -17,3 +17,7 @@ https://third-hell-101.notion.site/DFStack-M101-Introducci-n-a-Javascript-c856ae
 > M102 - Configuración de NodeJS
 
 https://third-hell-101.notion.site/DFStack-M102-Configuraci-n-de-NodeJS-ee4b0f0310ff4982bf49447ed2e1b622
+
+> M103 - Fundamentos de Javascript
+
+https://third-hell-101.notion.site/DFStack-M103-Fundamentos-de-Javascript-7224fbebde97448480483eb6bbb18223
