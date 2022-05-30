@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-m102-2",
+  "version": "0.0.1",
+  "description": "Proyecto 2 de la sesión m102",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dragonnomada/diplomado-fullstack-cfe/m102/proyect0-m102-2.git"
+  },
+  "keywords": [
+    "javascript",
+    "cfe",
+    "pro"
+  ],
+  "author": "CFE",
+  "license": "MIT",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  }
+}

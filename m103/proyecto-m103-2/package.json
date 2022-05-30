@@ -1,0 +1,13 @@
+{
+  "name": "proyecto-m103-2",
+  "version": "1.0.0",
+  "description": "Proyecto 2 Sesión M103",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "CFE",
+  "license": "ISC"
+}
