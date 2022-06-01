@@ -18,6 +18,10 @@ https://nodejs.org/en/download/
 
 https://code.visualstudio.com/download
 
+> Postman
+
+https://www.postman.com/downloads/
+
 > REPLit
 
 https://replit.com
