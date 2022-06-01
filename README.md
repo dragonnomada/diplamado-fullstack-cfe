@@ -8,6 +8,24 @@ UNIVERSIDAD TECNOLÓGICA DE CFE | CAMPUS HERMOSILLO
 
 [![Alan Badillo Salas](https://avatars.githubusercontent.com/u/79223578?s=40&v=4 "Alan Badillo Salas")](https://github.com/dragonnomada) Por [Alan Badillo Salas](https://github.com/dragonnomada)
 
+## Herramientas
+
+> NodeJS
+
+https://nodejs.org/en/download/
+
+> Visual Studio Code
+
+https://code.visualstudio.com/download
+
+> REPLit
+
+https://replit.com
+
+> CodeSandbox
+
+https://codesandbox.io
+
 ## Tutoriales
 
 > NodeJS - W3Schools
