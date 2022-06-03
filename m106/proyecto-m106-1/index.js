@@ -22,10 +22,19 @@ connection.connect((error) => {
 
     connection.query("SELECT * FROM pruebas", (error, result, fields) => {
         if (error) {
-            console.log(`Error en el query: ${error}`)
+            console.log(`Error en el query 1: ${error}`)
             process.exit(1) // ABORTA LA EJECUCIÓN DE NODE
         }
 
         console.log(result)
+
+        connection.query("SELECT * FROM pruebas WHERE id=1", (error, result, fields) => {
+            if (error) {
+                console.log(`Error en el query 2: ${error}`)
+                process.exit(1) // ABORTA LA EJECUCIÓN DE NODE
+            }
+    
+            console.log(result)
+        })
     })
 })
