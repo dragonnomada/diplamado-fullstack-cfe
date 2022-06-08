@@ -21,7 +21,6 @@ async function main() {
     const app = express()
 
 	app.use(express.json())
-
     // TODO: RUTAS
     app.use("/api/cfe/recibos", cfeRecibosRouter)
 
