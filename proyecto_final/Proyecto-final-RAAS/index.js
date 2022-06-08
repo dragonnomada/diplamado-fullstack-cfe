@@ -1,6 +1,3 @@
-
-// index.js
-
 require("dotenv").config()
 
 const http = require("http")
@@ -8,7 +5,7 @@ const express = require("express")
 
 const dbService = require("./services/db")
 
-const cfeRecibosRouter = require("./routes/cfe/recibos")
+const cfeRecibosRouter = require("./routers/cfe/recibos")
 
 async function main() {
 
@@ -20,7 +17,8 @@ async function main() {
 
     const app = express()
 
-	app.use(express.json())
+		app.use(express.json())
+
     // TODO: RUTAS
     app.use("/api/cfe/recibos", cfeRecibosRouter)
 

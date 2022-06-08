@@ -1,6 +1,3 @@
-
-// index.js
-
 require("dotenv").config()
 
 const http = require("http")
@@ -12,26 +9,25 @@ const cfeRecibosRouter = require("./routes/cfe/recibos")
 
 async function main() {
 
-    console.log("Estableciendo conexión a la base de datos...")
+    console.log("Estableciendo conexion a la base de datos...")
 
     await dbService.connect()
 
-    console.log("Se ha establecido la conexión a la base de datos")
-
+    console.log("Se ha establecido la conexion a la base de datos")
+    
     const app = express()
-
-	app.use(express.json())
-    // TODO: RUTAS
+    app.use(express.json())
+    
     app.use("/api/cfe/recibos", cfeRecibosRouter)
 
     const server = http.createServer(app)
 
-    console.log("Servidor iniciado un servidor en http://localhost:5000/")
+    console.log("Servidor iniciado en el puerto 5000")
 
     server.listen(5000)
 
 }
 
 main().catch(error => {
-    console.log(`${error}`)
+    console.log(`Error: ${error}`)
 })
