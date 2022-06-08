@@ -1,0 +1,87 @@
+cfe
+
+recibos
+-----------------
+id int primary key auto_increment
+num_servicio varchar(60) not null
+codigo_barras varchar(60) not null
+total int not null
+mes int not null
+año int not null
+consumo int not null
+nivel varchar(1) not null default 'X'
+creado timestamp not null default now()
+actualizado timestamp
+pagado timestamp
+cadena_pago varchar(255) $
+entregado timestamp
+firma_entrega varchar(255) $
+notificado timestamp
+firma_notificacion varchar(255) $
+cancelado timestamp
+firma_cancelacion varchar(255) $
+
+---------------------------------------------
+GET /api/cfe/recibos
+GET /api/cfe/recibos/pagados
+GET /api/cfe/recibos/pagados/cancelados
+GET /api/cfe/recibos/cancelados
+GET /api/cfe/recibos/entregados
+GET /api/cfe/recibos/entregados/pagados
+GET /api/cfe/recibos/entregados/pagados/cancelados
+GET /api/cfe/recibos/entregados/cancelados
+
+? id=123
+? num_servicio=xxxxx
+? codigo_barras=xxxxx
+* ? total_min=123
+* ? total_max=456
+* ? mes=1
+* ? año=2022
+
+PUT /api/cfe/recibos
+{
+  num_servicio: "xxxxxx"
+  codigo_barras: "xxxxxx"
+  total: 123
+  mes: 7
+  año: 2022
+  consumo: 840
+  nivel: null
+}
+
+POST /api/cfe/recibos/:num_servicio/pagar
+{
+  cadena_pago: "yyyyyyyyyy"
+}
+
+POST /api/cfe/recibos/:num_servicio/entregar
+{
+  firma_entrega: "yyyyyyyyyy"
+}
+
+POST /api/cfe/recibos/:num_servicio/notificar
+{
+  firma_notificacion: "yyyyyyyyyy"
+}
+
+DELETE /api/cfe/recibos/:num_servicio/cancelar
+{
+  firma_cancelacion: "yyyyyyyyyy"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

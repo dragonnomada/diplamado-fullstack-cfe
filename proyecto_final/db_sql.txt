@@ -1,0 +1,22 @@
+mysql> create database cfe;
+mysql> use cfe;
+mysql> create table recibos (
+    -> id int primary key auto_increment,
+    -> num_servicio varchar(60) not null,
+    -> codigo_barras varchar(60) not null,
+    -> total int not null,
+    -> mes int not null,
+    -> año int not null,
+    -> consumo int not null,
+    -> nivel varchar(1) not null default 'X',
+    -> creado timestamp not null default now(),
+    -> actualizado timestamp,
+    -> pagado timestamp,
+    -> cadena_pago varchar(255),
+    -> entregado timestamp,
+    -> firma_entrega varchar(255),
+    -> notificado timestamp,
+    -> firma_notificacion varchar(255),
+    -> cancelado timestamp,
+    -> firma_cancelacion varchar(255)
+    -> );

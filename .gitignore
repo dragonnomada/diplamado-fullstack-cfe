@@ -1,5 +1,6 @@
 dist/
 lab/
 node_modules/
+solucion/
 package-lock.json
 .env

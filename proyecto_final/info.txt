@@ -1,0 +1,11 @@
+SIGUE LOS PASOS DEL 1 AL 13 SIN MODIFICAR NINGUNA
+LÍNEA DE CÓDIGO DE LAS NOTAS ACTUALIZADAS.
+
+AL INICIAR EL SERVIDOR YA DEBERÍAN FUNCIONAR ALGUNAS RUTAS:
+
+GET /api/cfe/recibos
+GET /api/cfe/recibos/pagados
+PUT /api/cfe/recibos
+POST /api/cfe/recibos/:num_servicio/pagar
+POST /api/cfe/recibos/:num_servicio/entregar
+DELETE /api/cfe/recibos/:num_servicio/cancelar
