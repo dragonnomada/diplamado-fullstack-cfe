@@ -1,0 +1,17 @@
+{
+  "name": "proyecto-final-vmdq",
+  "version": "1.0.0",
+  "description": "Proyecto Final Diplomado Full Stack Módulo I",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Delgadillo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
