@@ -1,0 +1,20 @@
+create table recibos (
+ id int primary key auto_increment,
+ num_servicio varchar(60) not null,
+ codigo_barras varchar(60) not null,
+ total int not null,
+ mes int not null,
+ anio int not null,
+ consumo int not null,
+ nivel varchar(1) not null default 'X',
+ creado timestamp not null default now(),
+ actualizado timestamp null,
+ pagado timestamp null,
+ cadena_pago varchar(255),
+ entregado timestamp null,
+ firma_entrega varchar(255),
+ notificado timestamp null,
+ firma_notificacion varchar(255),
+ cancelado timestamp null,
+ firma_cancelacion varchar(255)
+);
