@@ -62,10 +62,14 @@ https://dragonnomada.notion.site/DFStack-M104-NodeJS-API-Servicios-Web-y-Microse
 
 https://dragonnomada.notion.site/DFStack-M105-ExpressJS-M-todos-HTTP-1929c6389ce2461d978b5be8f28db57f
 
-> DFStack | M106 - MySQL & NodeJS
+> M106 - MySQL & NodeJS
 
 https://dragonnomada.notion.site/DFStack-M106-MySQL-NodeJS-a3ec493e0b1248329bd45a484fcef5ca
 
-> DFStack | Taller M1
+> Taller M1
 
 https://dragonnomada.notion.site/DFStack-Taller-M1-112fa085030d4e1db6d5023c3477a977
+
+> M108 - Git & Seguridad & Reverse Proxy
+
+https://dragonnomada.notion.site/DFStack-M108-Git-Seguridad-Reverse-Proxy-0e2fa685542c4597afe8dec1b8b541ad
