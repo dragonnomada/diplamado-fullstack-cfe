@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS y Reglas de Diseño</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #my-input-2 {
+            border: 4px dotted red;
+        }
+        
+        #my-image-2 {
+            border-radius: 10px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h2>1. Los elementos web tienen un diseño por defecto</h2>
+
+        <div>
+            <input type="text" placeholder="Escribe algo...">
+        </div>
+        <div>
+            <img src="https://placekitten.com/250">
+        </div>
+    </div>
+
+    <div>
+        <h2>2. Podemos modificar el diseño de los elementos web a través de <code>reglas de diseño</code></h2>
+
+        <p>
+            El lenguaje CSS (Cascade-Style-Sheet) define reglas en cascada (que se heredan),
+            para determinar cuál será el diseño de un elemento específico.
+        </p>
+
+        <div>
+            <input style="border: 4px dashed orange;" type="text" placeholder="Escribe algo...">
+        </div>
+        <div>
+            <img style="border-radius: 50%;" src="https://placekitten.com/250">
+        </div>
+    </div>
+
+    <div>
+        <h2>3. Podemos Especificar las reglas de diseño desde otro archivo mediante la etiqueta <code>&lt;link&gt;</code> en las cabeceras</h2>
+
+        <pre>
+            <code>
+                &lt;head&gt;
+                    &lt;link rel="stylesheet" href="style.css"&gt;
+                &lt;/head&gt;
+            </code>
+        </pre>
+
+        <div>
+            <input id="my-input" type="text" placeholder="Escribe algo...">
+        </div>
+        <div>
+            <img id="my-image" src="https://placekitten.com/250">
+        </div>
+    </div>
+
+    <div>
+        <h2>4. Podemos Especificar las reglas de diseño desde otro archivo mediante la etiqueta <code>&lt;style&gt;</code> en las cabeceras</h2>
+
+        <pre>
+            <code>
+                &lt;head&gt;
+                    &lt;style&gt;
+                        #my-input-2 {
+                            border: 4px dotted red;
+                        }
+                        
+                        #my-image-2 {
+                            border-radius: 10px;
+                            border: 2px solid blue;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+            </code>
+        </pre>
+
+        <div>
+            <input id="my-input-2" type="text" placeholder="Escribe algo...">
+        </div>
+        <div>
+            <img id="my-image-2" src="https://placekitten.com/250">
+        </div>
+    </div>
+
+    <div>
+        <h2>5. Podemos Especificar las reglas de diseño en la etiqueta usando el atributo <code>style</code></h2>
+
+        <pre>
+            <code>
+                &lt;input style="border: 4px solid gray; color: red;" type="text" placeholder="Escribe algo..."&gt;
+                &lt;img style="border-radius: 50%" src="https://placekitten.com/250"&gt;
+            </code>
+        </pre>
+
+        <div>
+            <input style="border: 4px solid gray; color: red;" type="text" type="text" placeholder="Escribe algo...">
+        </div>
+        <div>
+            <img style="border-radius: 50%" src="https://placekitten.com/250">
+        </div>
+    </div>
+
+</body>
+</html>

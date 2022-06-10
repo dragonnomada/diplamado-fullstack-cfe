@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Login</title>
+
+    <style>
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0px; /* Márgenes exteriores */
+            padding: 0px; /* Márgenes interiores */
+            box-sizing: border-box;
+        }
+
+        .app {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+        }
+
+        .login-container {
+            border: 1px solid gray;
+            box-shadow: 0px 0px 8px 2px #00000033;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .login-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .login-logo {
+            padding: 10px;
+        }
+
+        .login-logo > img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid gainsboro;
+            
+        }
+
+        button {
+            background-color: cornflowerblue;
+            color: white;
+            border: 2px solid steelblue;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        button:hover {
+            background-color: rgb(55, 121, 245);
+            border: 2px solid rgb(18, 135, 231);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="app">
+
+        <!-- Contenedor del Login -->
+        <div class="login-container">
+
+            <!-- Logo -->
+            <div class="login-header">
+
+                <div class="login-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo_TV_2015.png/200px-Logo_TV_2015.png" >
+                </div>
+
+                <div>
+                    <h1>Bienvenido a LOGO</h1>
+                    <h2>Inicia Sesión</h2>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <!-- Campos -->
+            <div>
+
+                <div style="display: flex; flex-direction: column; border-bottom: 1px dashed gray; padding: 10px;">
+                    <label style="padding: 10px 0px; color: gray;" for="user">Usuario</label>
+                    <input id="user" type="text" placeholder="Ej. batman">
+                </div>
+                
+                <div style="display: flex; flex-direction: column; border-bottom: 1px dashed gray; padding: 10px;">
+                    <label style="padding: 10px 0px; color: gray;" for="password">Contraseña</label>
+                    <input id="password" type="text" placeholder="Ej. ******">
+                </div>
+
+            </div>
+
+            <!-- Botones -->
+            <div style="padding: 10px; display: flex; justify-content: space-between;">
+
+                <div>
+                    <button>Registrarse</button>
+                </div>
+
+                <div>
+                    <button>Iniciar Sesión</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
