@@ -22,3 +22,9 @@ Reconstruye la página mostrada con Bootstrap
 
 5. Crea un cajón para mostrar una alerta tipo warning
 6. Crea un cajón para mostrar el modal de Aceptar/Cancelar
+
+PISTA 1: <img width="80px" src="...">
+
+PISTA 2: <div class="border-start border-end border-5 border-primary rounded">
+
+PISTA 3: <div class="d-flex flex-row justify-content-between px-4">

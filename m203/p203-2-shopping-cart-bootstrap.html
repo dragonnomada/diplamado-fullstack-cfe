@@ -1,0 +1,827 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<style>
+    body {
+        zoom: 0.5;
+    }
+</style>
+
+<div class="h-100 d-flex flex-column bg-light p-4 overflow-hidden" style="user-select: none;">
+    <div class="d-flex justify-content-between align-items-center px-2">
+        <div>
+            <h1>Shopping Cart</h1>
+        </div>
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active">Data</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="flex-grow d-flex flex-column p-4 overflow-hidden">
+        <div class="d-flex border p-5 bg-white rounded shadow overflow-hidden">
+            <!-- PANEL SHOPPING -->
+            <div class="flex-grow w-100 h-100 d-flex flex-column">
+                <!-- Panel Compra -->
+                <div class="flex-grow h-100 overflow-hidden">
+                    <div class="flex-grow h-100 overflow-auto">
+                        <!-- tabla -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="table-primary">
+                                    <th>Producto</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Producto -->
+                                        <div class="d-flex">
+                                            <div>
+                                                <img class="border rounded border-primary"
+                                                    style="width: 80px; height: 80px; object-fit: cover;"
+                                                    src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/c/xcomfort_blackred01.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    Silla de Videojuegos
+                                                </div>
+                                                <div class="text-info" style="font-size: 10px;">
+                                                    <div>
+                                                        <span>Size: Large</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Color: Negro/Rojo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Unitario -->
+                                        <div>
+                                            <span>$148.66</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Cantidad -->
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary">-</button>
+                                                <input class="form-control text-center" type="number" placeholder="Cantidad"
+                                                    value="1">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Precio Total -->
+                                        <div>
+                                            <span>$743.30</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <label class="pb-3" for="">Agregar Indicaciones:</label>
+                    <textarea cols="30" rows="10"></textarea>
+                </div>
+                <div class="d-flex justify-content-between align-items-center pt-3">
+                    <div style="cursor: pointer;">
+                        <span><i class="fas fa-chevron-circle-left"></i></span>
+                        <span class="ps-2">Continuar comprando</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-grow p-4">
+                <!-- Panel Pago -->
+                <div>
+                    <!-- Tarjeta Total -->
+                    <h2>Resumen de Compra</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span>Subtotal:</span>
+                                </div>
+                                <div>
+                                    <span>$1,571.19</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span>Descuento:</span>
+                                </div>
+                                <div>
+                                    <span>-$157.11</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span>Costo Envío:</span>
+                                </div>
+                                <div>
+                                    <span>$25.00</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span>Impuestos:</span>
+                                </div>
+                                <div>
+                                    <span>$19.22</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span><strong>Total:</strong></span>
+                                </div>
+                                <div>
+                                    <span><strong>$19.22</strong></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pt-3">
+                    <div class="alert alert-success">
+                        <span>Se ha aplicado un <strong>cupón</strong> de descuento</span>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Código Cupón">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <button class="w-100 btn btn-primary" disabled>Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center pt-2" style="font-size: 0.75rem; color: gainsboro;">
+        <span>Derechos Reservados CFE &copy; 2022</span>
+    </div>
+</div>
