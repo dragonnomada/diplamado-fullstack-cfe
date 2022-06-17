@@ -1,0 +1,178 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<div class="w-100 vh-100 bg-light">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col h-100 p-2">
+                <div class="h-100 border rounded">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-1">Formularios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-2">Tarjetas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-3">Carrusel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-4">Colapsables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-5">Desplegables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-6">Menús</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-7">Progresos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-8">Listas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-9">Esqueletos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-10">Tablas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab-11">Miscelaneos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col h-100 p-2">
+                <div class="h-100 border p-2">
+                    <div id="tab-error" class="d-none">
+                        <h2>En Construcción...</h2>
+                        <img src="https://place-hold.it/200">
+                        <div class="py-3">
+                            <h5 class="card-title placeholder-glow">
+                                <span class="placeholder col-6"></span>
+                            </h5>
+                            <p class="card-text placeholder-glow">
+                                <span class="placeholder col-7"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-6"></span>
+                                <span class="placeholder col-8"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="tab-0" class="d-block">
+                        <h2>Cocina de Componentes de Bootstrap</h2>
+                        <img src="https://place-hold.it/200">
+                        <div class="py-3">
+                            <h5 class="card-title placeholder-glow">
+                                <span class="placeholder col-6"></span>
+                            </h5>
+                            <p class="card-text placeholder-glow">
+                                <span class="placeholder col-7"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-6"></span>
+                                <span class="placeholder col-8"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="tab-1" class="d-none">
+                        <h2>Formularios</h2>
+                        <form>
+                            <input class="form-control" type="text" placeholder="Usuario">
+                        </form>
+                    </div>
+                    <div id="tab-2" class="d-none">
+                        <h2>Tarjetas</h2>
+                    </div>
+                    <div id="tab-3" class="d-none">
+                        <h2>Carrusel</h2>
+                    </div>
+                    <div id="tab-4" class="d-none">
+                        <h2>Colapsables</h2>
+                    </div>
+                    <div id="tab-5" class="d-none">
+                        <h2>Desplegables</h2>
+                    </div>
+                    <div id="tab-6" class="d-none">
+                        <h2>Menús de Navegación</h2>
+                    </div>
+                    <div id="tab-7" class="d-none">
+                        <h2>Progresos</h2>
+                    </div>
+                    <div id="tab-8" class="d-none">
+                        <h2>Listas</h2>
+                    </div>
+                    <div id="tab-xxxxx" class="d-none">
+                        <h2>Esqueletos</h2>
+                    </div>
+                    <div id="tab-10" class="d-none">
+                        <h2>Tablas</h2>
+                    </div>
+                    <div id="tab-11" class="d-none">
+                        <h2>Miscelaneos</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let divAnterior = document.getElementById("tab-0")
+
+    function desactivarTabs() {
+        // Buscamos todos los elementos con el CSS Selector
+        // Selector: <etiqueta>[<atributo>^="<texto>"]
+        for (let link of document.querySelectorAll(`a[href^="#"]`)) {
+            link.className = "nav-link"
+        }
+    }
+
+    function activarTab(tabId) {
+        // Buscamos el elemento con el CSS Selector
+        // Selector: <etiqueta>[<atributo>^="#<tab>"]
+        const link = document.querySelector(`a[href="#${tabId}"]`)
+        link.className = "nav-link active"
+    }
+
+    function ocultarInterfaz(div) {
+        div.className = "d-none"
+    }
+
+    function mostrarInterfaz(div) {
+        div.className = "d-block"
+    }
+
+    function actualizarInterfaz(div) {
+        divAnterior = div
+    }
+
+    function mostrarInterfazTab(tabId) {
+        let divActual = document.getElementById(tabId) || document.getElementById("tab-error")
+
+        ocultarInterfaz(divAnterior)
+        mostrarInterfaz(divActual)
+        actualizarInterfaz(divActual)
+    }
+
+    function seleccionarTab(tabId) {
+        desactivarTabs()
+        activarTab(tabId)
+
+        mostrarInterfazTab(tabId)
+    }
+
+    window.addEventListener("hashchange", (event) => {
+        console.log(event)
+        const tabId = event.newURL.split("#")[1]
+        // https://...#tab-x -> .split("#") -> ["https://...", "tab-x"]
+
+        console.log(tabId) // "tab-x"
+
+        seleccionarTab(tabId)
+    })
+
+</script>

@@ -1,0 +1,31 @@
+CONTAINER
+  ROW
+    COL <izquierda>
+      CONTAINER
+        ROW
+          COL
+        ROW
+          COL
+        ROW
+          COL
+          COL
+          COL
+        ROW
+          COL
+        ROW
+          COL
+          COL
+    COL <derecha ~gris>
+      CONTAINER
+        ROW
+          COL
+        ROW
+          COL
+        ROW
+          COL
+        ROW
+          COL
+        ROW
+          COL
+        ROW
+          COL
