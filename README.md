@@ -8,6 +8,10 @@ UNIVERSIDAD TECNOLÓGICA DE CFE | CAMPUS HERMOSILLO
 
 [![Alan Badillo Salas](https://avatars.githubusercontent.com/u/79223578?s=40&v=4 "Alan Badillo Salas")](https://github.com/dragonnomada) Por [Alan Badillo Salas](https://github.com/dragonnomada)
 
+## NOTAS
+
+https://dragonnomada.notion.site/Diplomado-FullStack-CFE-9b1f3f85758d48438879ff14d2a657ff
+
 ## Herramientas
 
 > NodeJS
@@ -39,7 +43,3 @@ https://www.w3schools.com/nodejs/default.asp
 > ExpressJS - Tutorialspoint
 
 https://www.tutorialspoint.com/expressjs/index.htm
-
-## NOTAS
-
-https://dragonnomada.notion.site/Diplomado-FullStack-CFE-9b1f3f85758d48438879ff14d2a657ff
