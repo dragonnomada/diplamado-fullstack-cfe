@@ -1,0 +1,48 @@
+<template id="card-component">
+  <div class="p-4">
+    <div class="card shadow">
+      <div class="card-header">
+        <span data-ref="title" class="fw-bold">Hola soy un título</span>
+      </div>
+      <div class="card-body">
+        <span data-ref="content">Hola soy un contenido</span>
+      </div>
+      <div class="card-footer text-muted">
+        <span data-ref="description" style="font-size: 0.8rem;"
+          >Hola soy una descripción</span
+        >
+      </div>
+    </div>
+  </div>
+</template>
+
+<meta charset="utf-8" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+/>
+
+<div id="app"></div>
+
+<script>
+  function createCardComponent(title, message, details) {
+    const template = document.getElementById("card-component");
+    const node = document.importNode(template.content, true);
+    const parent = node.children[0];
+
+    parent.querySelector(`[data-ref="title"]`).innerText = title;
+    parent.querySelector(`[data-ref="content"]`).innerText = message;
+    parent.querySelector(`[data-ref="description"]`).innerText = details;
+
+    document.getElementById("app").append(parent);
+  }
+
+  createCardComponent("Hola 1", "Tarjeta 1", "Descripción 1");
+  createCardComponent("Hola 2", "Tarjeta 2", "Descripción 2");
+  createCardComponent(
+    "Ana Ming",
+    "ana.ming@gmail.com",
+    "Av. Siempre Viva 123, Springfield"
+  );
+</script>
