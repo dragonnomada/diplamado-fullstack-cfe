@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1 - Todo App</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <template id="todo-list-item">
+        <li class="list-group-item">
+            <div class="d-flex align-items-center">
+                <div class="pe-3 pt-1">
+                    <input id="xyz" type="checkbox" checked>
+                </div>
+                <label for="xyz" class="w-100 text-decoration-line-through">Comprar cosas...</label>
+            </div>
+        </li>
+    </template>
+
+    <script>
+        function createTodoListItem(title, checked) {
+            const template = document.getElementById("todo-list-item")
+            const node = document.importNode(template.content, true)
+            const parent = node.children[0]
+
+            const checkbox = parent.querySelector("input[type='checkbox']")
+            checkbox.id = Math.random().toString(16)
+            checkbox.checked = !!checked
+
+            const label = parent.querySelector("label")
+            label.setAttribute("for", checkbox.id)
+            label.textContent = title
+            if (!checked) {
+                label.classList.remove("text-decoration-line-through")
+            }
+
+            checkbox.addEventListener("change", () => {
+                if (checkbox.checked) {
+                    label.classList.add("text-decoration-line-through")
+                } else {
+                    label.classList.remove("text-decoration-line-through")
+                }
+            })
+            label.addEventListener("mouseenter", () => {
+                label.classList.add("text-info")
+            })
+            label.addEventListener("mouseleave", () => {
+                label.classList.remove("text-info")
+            })
+
+            return parent
+        }
+    </script>
+
+    <div id="app" class="w-100 vh-100 p-2 bg-light" style="user-select: none;">
+        <!-- TODO: Vista principal -->
+        <div class="p-2 border-bottom">
+            <div class="input-group">
+                <input class="form-control" type="text" 
+                    placeholder="Escribe algo por hacer..."
+                    onkeypress="if (event.key === 'Enter') agregarTodo()">
+                <button class="btn btn-primary" onclick="agregarTodo()">Agregar</button>
+            </div>
+        </div>
+        <div>
+            <ul class="list-group">
+                <!-- <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="pe-3 pt-1">
+                            <input type="checkbox" checked>
+                        </div>
+                        <label class="w-100 text-decoration-line-through">Comprar cosas...</label>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="pe-3 pt-1">
+                            <input type="checkbox">
+                        </div>
+                        <label class="w-100">Comprar cosas...</label>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts personalizados -->
+    <script>
+        function agregarTodo() {
+            const todoInput = document.querySelector("input.form-control[type='text']")
+            const title = todoInput.value
+            if (title) {
+                const todoListItem = createTodoListItem(title, false)
+                const todoList = document.querySelector("ul.list-group")
+                todoList.append(todoListItem)
+                todoInput.value = ""
+                setTimeout(() => {
+                    todoInput.focus()
+                }, 10)
+            } else {
+                alert("Escribe algo")
+            }
+        }
+    </script>
+</body>
+
+</html>
