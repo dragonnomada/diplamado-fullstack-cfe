@@ -1,0 +1,10 @@
+div.avatar {
+
+    img {
+        width: $avatar-size;
+        height: $avatar-size;
+        object-fit: cover;
+        border-radius: $radius;
+    }
+
+}

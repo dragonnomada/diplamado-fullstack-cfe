@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="../vendors/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<style>
+    .selectable {
+        cursor: pointer;
+        user-select: none;
+    }
+    .selectable:hover {
+        background-color: whitesmoke;
+    }
+    .selectable:active {
+        background-color: gainsboro;
+    }
+</style>
+
+<div class="offcanvas offcanvas-start show"
+    id="offcanvas-principal"
+    aria-labelledby="offcanvas-label"
+    tabindex="-1">
+
+    <div class="offcanvas-header">
+        <div class="w-100 d-flex align-items-center border-bottom py-4 px-2">
+            <div class="pe-4">
+                <img class="rounded-circle shadow" style="width: 60px; height: 60px; object-fit: cover;" src="https://place-hold.it/300">
+            </div>
+            <div class="d-flex flex-column">
+                <div>
+                    <span>Ana Ming</span>
+                </div>
+                <div>
+                    <small>
+                        <span class="text-muted">Ventas</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container">
+            <div class="row pb-2 selectable" onclick="selectView('home')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-home"></i>
+                </div>
+                <div class="col">Inicio</div>
+                <div class="col"></div>
+            </div>
+            <div class="row pb-2 selectable" onclick="selectView('notifications')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-bell"></i>
+                </div>
+                <div class="col">Notificaciones</div>
+                <div class="col text-end">
+                    <span class="badge rounded-pill text-bg-danger">12</span>
+                </div>
+            </div>
+            <div class="row pb-2 selectable" onclick="selectView('profile')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-user"></i>
+                </div>
+                <div class="col">Perfil</div>
+                <div class="col"></div>
+            </div>
+            <div class="row pb-2 selectable" onclick="selectView('reports')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-chart-line"></i>
+                </div>
+                <div class="col">Reportes</div>
+                <div class="col"></div>
+            </div>
+            <div class="row pb-2 selectable" onclick="selectView('messages')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-envelope"></i>
+                </div>
+                <div class="col">Mensajes</div>
+                <div class="col"></div>
+            </div>
+            <div class="row pb-2 selectable" onclick="selectView('config')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-gear"></i>
+                </div>
+                <div class="col">Configuración</div>
+                <div class="col"></div>
+            </div>
+            <div class="row pb-2 selectable" onclick="selectView('logout')">
+                <div class="col text-end">
+                    <i class="text-primary fa-solid fa-power-off"></i>
+                </div>
+                <div class="col">Cerrar Sesión</div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="app">
+    <button class="btn btn-warning" onclick="mostrarOffcanvas()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div id="home" class="d-block view">
+        <h1>Bienvenido</h1>
+    </div>
+    <div id="notifications" class="d-none view">
+        <h1>Notificaciones</h1>
+    </div>
+    <div id="profile" class="d-none view">
+        <h1>Perfil</h1>
+    </div>
+    <div id="reports" class="d-none view">
+        <h1>Reportes</h1>
+    </div>
+    <div id="messages" class="d-none view">
+        <h1>Mensajes</h1>
+    </div>
+    <div id="config" class="d-none view">
+        <h1>Configuración</h1>
+    </div>
+</div>
+
+<script src="../vendors/bootstrap.min.js"></script>
+
+<script>
+    const offcanvas = new bootstrap.Offcanvas("#offcanvas-principal")
+    
+    function mostrarOffcanvas() {
+        offcanvas.show()
+    }
+
+    function selectView(view) {
+        if (view === "logout") {
+            // TODO: Cerrar la sesión
+            return
+        }
+
+        const viewElement = document.getElementById(view)
+        if (viewElement) {
+            for (let otherViewElement of document.querySelectorAll(".view")) {
+                otherViewElement.classList.remove("d-block")
+                otherViewElement.classList.add("d-none")
+            }
+            viewElement.classList.remove("d-none")
+            viewElement.classList.add("d-block")
+            offcanvas.hide()
+        }
+    }
+</script>
