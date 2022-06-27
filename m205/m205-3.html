@@ -1,0 +1,38 @@
+<meta charset="utf-8" />
+
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<div id="app"></div>
+
+<script>
+  const ul = document.createElement("ul");
+
+  ul.classList.add("list-group");
+  ul.classList.add("list-group-flush");
+
+  for (let i = 0; i < 10; i++) {
+    const li = document.createElement("li");
+    li.classList.add("list-group-item");
+
+    li.innerHTML = `
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Título</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Título</div>
+        </div>
+        <div class="card-footer">
+          <div class="card-title">Título</div>
+        </div>
+      </div>
+    `;
+
+    ul.appendChild(li);
+  }
+
+  document.getElementById("app").append(ul);
+</script>
