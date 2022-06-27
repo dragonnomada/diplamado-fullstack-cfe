@@ -1,0 +1,30 @@
+<template id="picture-card">
+    <div>
+        <h1>Hola mundo</h1>
+        <img src="https://place-hold.it/400">
+    </div>
+</template>
+
+<script>
+    function createPictureCard(title, url) {
+        const template = document.getElementById("picture-card")
+        const node = document.importNode(template.content, true)
+        const parent = node.children[0]
+
+        const h1 = parent.querySelector("h1")
+        h1.textContent = title
+
+        const img = parent.querySelector("img")
+        img.src = url
+
+        return parent
+    }
+</script>
+
+<div id="app"></div>
+
+<script>
+    document.getElementById("app").append(createPictureCard("Imagen 1", "https://place-hold.it/100"))
+    document.getElementById("app").append(createPictureCard("Imagen 2", "https://place-hold.it/200"))
+    document.getElementById("app").append(createPictureCard("Imagen 3", "https://place-hold.it/300"))
+</script>

@@ -4,3 +4,4 @@ node_modules/
 solucion/
 package-lock.json
 .env
+vendors/bootstrap

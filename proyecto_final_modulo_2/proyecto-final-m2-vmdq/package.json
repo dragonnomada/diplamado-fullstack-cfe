@@ -1,14 +1,13 @@
 {
-  "name": "proyecto_final",
+  "name": "proyecto-final-vmdq",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto Final Diplomado Full Stack Módulo I",
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Victor Delgadillo",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
