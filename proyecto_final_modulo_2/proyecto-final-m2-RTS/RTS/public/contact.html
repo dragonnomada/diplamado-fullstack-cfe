@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about.html">Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/contact.html">Contacto de la Empresa</a>
+              </li>              
+            </ul>
+          </div>
+        </div>        
+    </nav>
+    <div class="p-5">
+        <h1>Contacto</h1>
+        <div class="container overflow-hidden">
+            <div style="background-color: rgba(0, 128, 0, 0.605);" class="row p-2">
+                <div class="col-6 text-center align-self-center">
+                    <div>
+                        <div>                        
+                            <img style="width: 300px; height: 300px; object-fit: cover;" class="rounded-circle" 
+                            src="img/ubicacion.JPG" alt="Imagen Ubicacion">
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <span>Comision Federal de Electricidad</span>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="p-2">
+                        <div>Juarez y San luis S/N Col. Centro</div>
+                        <div>Hermosillo, Sonora</div>
+                    </div>               
+    
+                    <div class="bg-light p-3">
+                        <form action="/api/cfe/contacto" method="post">
+                            <div class="mb-3">
+                                <label class="form-label">Usuario</label>
+                                <input name="usuario" type="text" placeholder="RPE" class="form-control">                          
+                              </div>
+                            <div class="mb-3">
+                              <label class="form-label">Correo</label>
+                              <input name="correo" type="email" placeholder="@cfe.mx" class="form-control">                          
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje</label>
+                                <input style="height:50px;" name="mensaje" type="text" placeholder="Mensaje" class="form-control">                          
+                              </div>                        
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                          </form>                   
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
