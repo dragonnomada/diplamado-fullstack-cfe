@@ -1,0 +1,99 @@
+const express = require("express")
+
+const cfeRecibosService = require("../../../services/cfe/recibos")
+
+const router = express.Router()
+
+// GET /api/cfe/recibos
+router.get("/", async (request, response) => {   
+		
+        /*const id = request.body.id
+        const num_servicio = request.body.num_servicio
+        const codigo_barras = request.body.codigo_barras*/
+
+        const id = request.query.id
+		const num_servicio = request.query.num_servicio
+		const codigo_barras = request.query.codigo_barras        
+
+		const recibos = await cfeRecibosService.getTodos(id, num_servicio, codigo_barras)
+
+		response.json(recibos)
+})
+
+// GET /api/cfe/recibos/pagados
+router.get("/pagados", async (request, response) => {
+    // TODO: Recuperar los parámetros de búsqueda de `request`
+		const id = request.query.id
+		const num_servicio = request.query.num_servicio
+		const codigo_barras = request.query.codigo_barras
+
+		const recibos = await cfeRecibosService.getPagados(id, num_servicio, codigo_barras)
+
+		response.json(recibos)
+})
+
+// GET /api/cfe/recibos/pagados/cancelados
+router.get("/pagados/cancelados", async (request, response) => {
+    // TODO: Recuperar los parámetros de búsqueda de `request`
+		const id = request.query.id
+		const num_servicio = request.query.num_servicio
+		const codigo_barras = request.query.codigo_barras
+
+		const recibos = await cfeRecibosService.getPagadosCancelados(id, num_servicio, codigo_barras)
+
+		response.json(recibos)
+})
+
+// PUT /api/cfe/recibos
+router.put("/", async (request, response) => {
+    // TODO: Recuperar los datos del cuerpo de `request`
+		const datos = request.body
+
+        console.log(datos)
+
+		const [status, result] = await cfeRecibosService.nuevoRecibo(datos)
+
+		response.status(status).json(result)
+})
+
+// POST /api/cfe/recibos/:num_servicio/pagar
+router.post("/:num_servicio/pagar", async (request, response) => {
+    // TODO: Recuperar los datos del cuerpo de `request`
+		const datos = request.body
+
+		// TODO: Recuperar el parámetro dinámico del `request`
+		const num_servicio = request.params.num_servicio
+
+		const [status, result] = await cfeRecibosService.pagarRecibo(num_servicio, datos)
+
+		response.status(status).json(result)
+})
+
+// POST /api/cfe/recibos/:num_servicio/entregar
+router.post("/:num_servicio/entregar", async (request, response) => {
+    // TODO: Recuperar los datos del cuerpo de `request`
+		const datos = request.body
+
+		// TODO: Recuperar el parámetro dinámico del `request`
+		const num_servicio = request.params.num_servicio
+
+		const [status, result] = await cfeRecibosService.entregarRecibo(num_servicio, datos)
+
+		response.status(status).json(result)
+})
+
+// DELETE /api/cfe/recibos/:num_servicio/cancelar
+router.delete("/:num_servicio/cancelar", async (request, response) => {
+    // TODO: Recuperar los datos del cuerpo de `request`
+		const datos = request.body
+
+		// TODO: Recuper    ar el parámetro dinámico del `request`
+		const num_servicio = request.params.num_servicio
+
+		const [status, result] = await cfeRecibosService.cancelarRecibo(num_servicio, datos)
+
+		response.status(status).json(result)
+})
+
+
+module.exports = router

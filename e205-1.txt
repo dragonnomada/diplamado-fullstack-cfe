@@ -1,0 +1,21 @@
+Ejercicio: e205-1
+
+1. Importar la librería de Bootstrap
+   Pista: <link rel="..." href="...">
+
+2. Crear una tarjeta que contenga un título,
+   una imagen de cuerpo y una descripción abajo.
+   Pista: <div class="card"> ... class="card-body"
+
+3. Crear un botón que diga ocultar
+   Pista: <button class="btn btn-primary">Ocultar</button>
+
+4. Conectar el onclick del botón a la función ocultar
+   Pista: <button onclick="ocultar()" ...>
+
+5. Crear un script y definir la función ocultar()
+   Pista: function ocultar() { ... }
+
+6. En la función ocultar, recuperar la tarjeta
+   y le van a agregar la clase d-none
+   Pista: document.querySelector("card").classList.add("d-none")

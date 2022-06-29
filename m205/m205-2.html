@@ -1,0 +1,76 @@
+<!-- CSS only -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<style>
+  @keyframes show-in {
+    from {
+      height: 0px;
+      opacity: 0;
+    }
+    to {
+      height: 200px;
+      opacity: 1;
+    }
+  }
+
+  #collapse-content > img {
+    animation: show-in 800ms;
+  }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="card-title">
+        Reporte Financiero
+      </div>
+      <span onclick="alternarColapsado()" style="cursor: pointer;">
+        <i id="collapse-icon" class="fa-solid fa-circle-chevron-down"></i>
+      </span>
+    </div>
+  </div>
+  <div id="collapse-content" class="card-body d-none">
+    <img
+      class="w-100"
+      style="height: 200px;"
+      src="https://support.content.office.net/en-us/media/442d0e69-6716-420c-a8a9-75f580a5a5d7.png"
+      alt=""
+    />
+  </div>
+</div>
+
+<script>
+  let colapsado = true;
+
+  function alternarColapsado() {
+    if (colapsado) {
+      const collapseContentElement = document.getElementById(
+        "collapse-content"
+      );
+      collapseContentElement.classList.remove("d-none");
+      collapseContentElement.classList.add("d-block");
+      const collapseIconElement = document.getElementById("collapse-icon");
+      collapseIconElement.classList.remove("fa-circle-chevron-down");
+      collapseIconElement.classList.add("fa-circle-chevron-up");
+      colapsado = false;
+    } else {
+      const collapseContentElement = document.getElementById(
+        "collapse-content"
+      );
+      collapseContentElement.classList.remove("d-block");
+      collapseContentElement.classList.add("d-none");
+      const collapseIconElement = document.getElementById("collapse-icon");
+      collapseIconElement.classList.remove("fa-circle-chevron-up");
+      collapseIconElement.classList.add("fa-circle-chevron-down");
+      colapsado = true;
+    }
+  }
+</script>

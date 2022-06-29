@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!-- ESPECIAL: Aplicación web HTML5 -->
+<html> <!-- NORMAL: El documento HTML | DOM (document) -->
+
+    <!-- NORMAL: Contiene etiquetas que instruyen al NAVEGADOR -->
+    <head>
+
+        <!-- ESPECIAL: Define meta-instrucciones para el navegador -->
+        <meta charset="utf-8"> <!-- Soporta los caracteres UNICODE (utf-8) -->
+
+    </head>
+
+    <!-- NORMAL: Contiene etiquetas que instruyen al DOCUMENTO -->
+    <body>
+
+        <!-- NORMAL: PINTA título (el más grande) -->
+        <h1>Holá mundo</h1> <!-- ELEMENTO que contiene un título -->
+
+        <!-- NORMAL: PINTA sub-título (un nivel más pequeño) -->
+        <h2>¿Cómo estás?</h2> <!-- ELEMENTO que contiene un sub-título -->
+
+        <!-- NORMAL: PINTA sub-sub-título (un nivel más pequeño todavía) -->
+        <h3>¿Cómo estás?</h3> <!-- ELEMENTO que contiene un sub-sub-título -->
+
+        <div>
+
+            <p>Esta es una línea</p>
+            <p>Esta es otra línea</p>
+
+        </div>
+
+        <input type="search" placeholder="Buscar...">
+        <div>
+            <input id="inp-fruta" type="search" placeholder="Escribe una fruta" list="lista-frutas">
+            <datalist id="lista-frutas">
+                <option value="Manzana">Manzana Apple</option>
+                <option value="Mango">Mango Mango</option>
+                <option value="Pera">Pera Pear</option>
+                <option value="Piña">Piña Pinapple</option>
+            </datalist>
+        </div>
+        <select>
+            <option value="Manzana">Manzana Apple</option>
+            <option value="Mango" selected>Mango Mango</option>
+            <option value="Pera">Pera Pear</option>
+            <option value="Piña">Piña Pinapple</option>
+        </select>
+        <input type="text" placeholder="Ej. Ana Ming">
+        <input type="tel" placeholder="Ej. (+52) 5512345678">
+        <input type="email" placeholder="Ej. ejemplo@correo.com">
+        <input type="password" placeholder="Escribe tu contraseña">
+        <input type="password" placeholder="Repite tu contraseña">
+        <div>
+            <input id="check-recordar" type="checkbox" checked>
+            <label for="check-recordar">Recordar contraseña</label>
+        </div>
+        <div>
+            <div>
+                <input id="opc-a" type="radio" name="opcion">
+                <label for="opc-a">Opción A</label>
+            </div>
+            <div>
+                <input id="opc-b" type="radio" name="opcion" checked>
+                <label for="opc-b">Opción B</label>
+            </div>
+            <div>
+                <input id="opc-c" type="radio" name="opcion">
+                <label for="opc-c">Opción C</label>
+            </div>
+        </div>
+        <input type="submit" value="Iniciar Sesión">
+        <input type="button" value="Pulsame">
+        <button>Enviar</button>
+        <input type="color" value="#ff0000">
+        <input type="date" value="2022-05-01">
+        <input type="time" value="15:23">
+        <input type="number" value="50" min="20" max="80" step="5">
+        <input type="range">
+        <input type="datetime-local" value="2022-07-08T13:00">
+        <input type="month" value="2020-04">
+        <input type="week">
+        <input type="file">
+        <input type="image" src="https://placekitten.com/300">
+        <img src="https://placekitten.com/200" >
+        <input type="hidden" value="token-abc12345dddddd">
+
+    </body>
+
+</html>

@@ -5,6 +5,7 @@ const express = require("express")
 
 const dbService = require("./services/db")
 
+const cfeContactoRouter = require("./routers/cfe/contacto")
 const cfeRecibosRouter = require("./routers/cfe/recibos")
 
 async function main() {
@@ -18,8 +19,11 @@ async function main() {
     const app = express()
 
 		app.use(express.json())
+    app.use(express.urlencoded({ extended: false }))
 
     // TODO: RUTAS
+    app.use("/",express.static("public"))
+    app.use("/api/cfe/contacto", cfeContactoRouter)
     app.use("/api/cfe/recibos", cfeRecibosRouter)
 
     const server = http.createServer(app)

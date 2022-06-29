@@ -1,0 +1,107 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+/>
+
+<button class="btn btn-primary" onclick="getUsers()">Cargar Usuarios</button>
+<button class="btn btn-info" onclick="renderUsers()">Pintar Usuarios</button>
+
+<div id="app"></div>
+
+<script>
+  let users = [];
+
+  function userToDom(user) {
+    // { gender: "...", name: {...}, location: {...}, email: "...", ... }
+    const gender = user.gender; // gender["gender"]
+    const name = user.name; // { title: "...", first: "...", last: "..." }
+    const title = name.title;
+    const first = name.first;
+    const last = name.last;
+    const location = user.location; // { street: {...}, city: "...", state: "...", country: "...", postcode: "...", coordinates: {...}, timezone: {...} }
+    const street = location.street; // { number: <123>, name: "..." }
+    const street_number = street.number;
+    const street_name = street.name;
+    const city = location.city;
+    const state = location.state;
+    const country = location.country;
+    const postcode = location.postcode;
+    const coordinates = location.coordinates;
+    const latitude = coordinates.latitude;
+    const longitude = coordinates.longitude;
+    const timezone = location.timezone;
+    const timezone_offset = timezone.offset;
+    const timezone_description = timezone.description;
+    const email = user.email;
+    const picture = user.picture;
+    const picture_thumbnail = picture.thumbnail;
+    const picture_medium = picture.medium;
+    const picture_large = picture.large;
+    const nat = user.nat;
+
+    console.log(title, first, last, street_number, street_name, country, email);
+
+    const userDomElement = document.createElement("div");
+    // let html = "";
+    // html += "<div>" + title + " " + first + " " + last + "</div>";
+    // html += "<div>" + email + "</div>";
+    // userDomElement.innerHTML = html;
+
+    userDomElement.classList.add("p-4");
+    userDomElement.classList.add("border-bottom");
+
+    userDomElement.innerHTML = `
+      <div class="card">
+        <div class="card-header text-white" style="background-color: ${
+          gender === "male" ? "cornflowerblue" : "hotpink"
+        };">
+          <span>${title} ${first} ${last}
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="px-2">
+                  <img class="rounded-circle" src="${picture_thumbnail}" alt="${first}'s Picture" >
+              </div>
+              <div class="w-100 d-flex flex-column align-items-center">
+                <a href="mailto:${email}">${email}</a>
+                <img style="width: 28px" 
+                    src="https://www.worldometers.info/img/flags/${nat.toLowerCase()}-flag.gif"
+                    onerror="this.src = 'http://place-hold.it/452x302'"
+                >
+              </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <span style="font-size: 0.6rem;">${street_name} #${street_number}, ${city}. ${state}. ${country}. P.C. ${postcode}</span>
+        </div>
+      </div>
+    `;
+
+    return userDomElement;
+  }
+
+  async function getUsers() {
+    const response = await fetch("https://randomuser.me/api?results=10");
+
+    const data = await response.json();
+
+    // alert(JSON.stringify(data));
+
+    console.log(data); // { results: [...], infor: {...} }
+
+    users = data.results; // data["results"] [ {...}, {...}, ..., {...} ]
+  }
+
+  function renderUsers() {
+    document.getElementById("app").innerHTML = "";
+    for (let user of users) {
+      const userDomElement = userToDom(user);
+      document.getElementById("app").append(userDomElement);
+    }
+  }
+
+  (async () => {
+    await getUsers();
+    renderUsers();
+  })();
+</script>

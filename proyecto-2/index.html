@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 2</title>
+    <link rel="stylesheet" href="../vendors/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        .selectable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .selectable:hover {
+            background-color: whitesmoke;
+        }
+
+        .selectable:active {
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="offcanvas offcanvas-start" id="offcanvas-principal" aria-labelledby="offcanvas-label" tabindex="-1">
+
+        <div class="offcanvas-header">
+            <div class="w-100 d-flex align-items-center border-bottom py-4 px-2">
+                <div class="pe-4">
+                    <img class="rounded-circle shadow" style="width: 60px; height: 60px; object-fit: cover;"
+                        src="https://place-hold.it/300">
+                </div>
+                <div class="d-flex flex-column">
+                    <div>
+                        <span>Ana Ming</span>
+                    </div>
+                    <div>
+                        <small>
+                            <span class="text-muted">Ventas</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <div class="row pb-2 selectable" onclick="selectView('home')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-home"></i>
+                    </div>
+                    <div class="col-8">Inicio</div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row pb-2 selectable" onclick="selectView('notifications')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-bell"></i>
+                    </div>
+                    <div class="col-8">Notificaciones</div>
+                    <div class="col-2 text-end">
+                        <span class="badge rounded-pill text-bg-danger">12</span>
+                    </div>
+                </div>
+                <div class="row pb-2 selectable" onclick="selectView('profile')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-user"></i>
+                    </div>
+                    <div class="col-8">Perfil</div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row pb-2 selectable" onclick="selectView('reports')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="col-8">Reportes</div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row pb-2 selectable" onclick="selectView('messages')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="col-8">Mensajes</div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row pb-2 selectable" onclick="selectView('config')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-gear"></i>
+                    </div>
+                    <div class="col-8">Configuración</div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row pb-2 selectable" onclick="selectView('logout')">
+                    <div class="col-2 text-end">
+                        <i class="text-primary fa-solid fa-power-off"></i>
+                    </div>
+                    <div class="col-8">Cerrar Sesión</div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer d-block d-md-none">
+            <div class="text-center py-2 text-secondary" onclick="cerrarOffcanvas()">
+                <span><i class="fa-solid fa-times-circle fa-2x"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="app">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <button class="btn btn-warning" onclick="mostrarOffcanvas()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="px-1"></div>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div id="home" class="d-block view">
+                <div class="container overflow-hidden">
+                    <div class="row p-2">
+                        <div class="col-12 col-md-6">
+                            <div class="h-100 d-flex flex-column justify-content-center">
+                                <h1>Bienvenido a Mi Empresa</h1>
+                                <h5>Ahora eres parte de la experiencia bla bla bla...</h5>
+                                <div class="d-flex">
+                                    <div class="pe-2">
+                                        <button class="btn btn-primary">Comenzar</button>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-outline-primary">Documentación</button>
+                                    </div>
+                                </div>
+                                <div class="py-4 d-md-none"></div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <img style="width: 100%; height: 400px; object-fit: cover;"
+                                src="https://s.tmimgcdn.com/scr/1200x627/176800/cv-cv-para-ui--ux-designer-04-plantillas-de-cv-imprimibles_176874-original.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <div class="text-center py-4">
+                                    <i class="fa-solid fa-compass fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                                        tincidunt lectus quam, at facilisis erat iaculis imperdiet. Duis dictum, magna
+                                        id condimentum consequat, orci ligula suscipit mi, sit amet laoreet nibh purus
+                                        volutpat ipsum</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <div class="text-center py-4">
+                                    <i class="fa-solid fa-chart-line fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                                        tincidunt lectus quam, at facilisis erat iaculis imperdiet. Duis dictum, magna
+                                        id condimentum consequat, orci ligula suscipit mi, sit amet laoreet nibh purus
+                                        volutpat ipsum</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <div class="text-center py-4">
+                                    <i class="fa-solid fa-users fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                                        tincidunt lectus quam, at facilisis erat iaculis imperdiet. Duis dictum, magna
+                                        id condimentum consequat, orci ligula suscipit mi, sit amet laoreet nibh purus
+                                        volutpat ipsum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="notifications" class="d-none view">
+                <h1>Notificaciones</h1>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="pe-3">
+                                <div class="position-relative">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" src="https://placekitten.com/200">
+                            </div>
+                            <div class="ps-2">
+                                <div style="font-size: 0.9rem;">Hola mundo</div>
+                                <div style="font-size: 0.6rem;">hace 2 min</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="pe-3">
+                                <div class="position-relative">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" src="https://placekitten.com/200">
+                            </div>
+                            <div class="ps-2">
+                                <div style="font-size: 0.9rem;">Hola mundo</div>
+                                <div class="text-muted" style="font-size: 0.6rem;">hace 2 min</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="pe-3">
+                                <div class="position-relative">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" src="https://placekitten.com/200">
+                            </div>
+                            <div class="ps-2">
+                                <div style="font-size: 0.9rem;">Hola mundo</div>
+                                <div style="font-size: 0.6rem;">hace 2 min</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="pe-3">
+                                <div class="position-relative">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" src="https://placekitten.com/200">
+                            </div>
+                            <div class="ps-2">
+                                <div style="font-size: 0.9rem;">Hola mundo</div>
+                                <div style="font-size: 0.6rem;">hace 2 min</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="pe-3">
+                                <div class="position-relative">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" src="https://placekitten.com/200">
+                            </div>
+                            <div class="ps-2">
+                                <div style="font-size: 0.9rem;">Hola mundo</div>
+                                <div style="font-size: 0.6rem;">hace 2 min</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="profile" class="d-none view">
+                <h1>Perfil</h1>
+            </div>
+            <div id="reports" class="d-none view">
+                <h1>Reportes</h1>
+            </div>
+            <div id="messages" class="d-none view">
+                <h1>Mensajes</h1>
+            </div>
+            <div id="config" class="d-none view">
+                <h1>Configuración</h1>
+            </div>
+        </div>
+        <div class="py-5"></div>
+        <div class="px-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <div class="py-2">
+                                <span class="fw-bold">Galería</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Comunidad</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Tendencias</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Picks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <div class="py-2">
+                                <span class="fw-bold">Galería</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Comunidad</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Tendencias</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Picks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <div class="py-2">
+                                <span class="fw-bold">Galería</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Comunidad</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Tendencias</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Picks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <div class="py-2">
+                                <span class="fw-bold">Sucríbite</span>
+                            </div>
+                            <div class="py-1">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                                    tincidunt lectus quam.</span>
+                            </div>
+                            <div class="py-1">
+                                <input class="form-control" type="email" placeholder="Escribe tu correo...">
+                            </div>
+                            <div class="py-1">
+                                <button class="btn btn-outline-primary">Suscribir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-bottom py-2"></div>
+            <div class="py-4 text-muted">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <span>Política de Privacidad | Términos y Condiciones</span>
+                        </div>
+                        <div class="col text-end">
+                            <span>Derechos Reservados &copy; 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../vendors/bootstrap.min.js"></script>
+
+    <script>
+        const offcanvas = new bootstrap.Offcanvas("#offcanvas-principal")
+
+        function mostrarOffcanvas() {
+            offcanvas.show()
+        }
+
+        function cerrarOffcanvas() {
+            offcanvas.hide()
+        }
+
+        function selectView(view) {
+            if (view === "logout") {
+                // TODO: Cerrar la sesión
+                return
+            }
+
+            const viewElement = document.getElementById(view)
+            if (viewElement) {
+                for (let otherViewElement of document.querySelectorAll(".view")) {
+                    otherViewElement.classList.remove("d-block")
+                    otherViewElement.classList.add("d-none")
+                }
+                viewElement.classList.remove("d-none")
+                viewElement.classList.add("d-block")
+                offcanvas.hide()
+            }
+        }
+    </script>
+</body>
+
+</html>

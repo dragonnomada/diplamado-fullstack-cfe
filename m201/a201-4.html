@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas Diseño y Selectores</title>
+
+    <!--
+
+        Los SELECTORES (Selectors) de CSS son abreviaciones
+        que nos permitirán recuperar o especificar un elemento web
+        para aplicarle un conjunto de reglas de diseño.
+
+        <selector> {
+            <reglas ...>
+        }
+
+    -->
+    <style>
+        /* Selecciona todas las etiquetas <input> y aplica la regla */
+        input {
+            border: 4px solid red; /* Modifica el borde del elemento */
+            /* 
+                border: <size> <style> <color>;
+                border-width: <size>;
+                border-style: <solid|dashed|dotted|...>;
+                border-color: <color>;
+            
+            */
+        }
+
+        /* Selecciona todas las etiquetas <input> con el atributo type="text" */
+        /* NOTA: Este selector es más específico que el anterior, mayor importancia al aplicar las reglas */
+        input[type="text"] {
+            border: 4px solid blue;
+        }
+
+        /* Nota: Es más específica */
+        /*input[type="password"] {
+            border: 4px solid greenyellow;
+        }*/
+
+        input[type="password"]:nth-of-type(2) {
+            border: 4px solid hotpink;
+        }
+
+        /* 
+            El selector .<clase> aplica las reglas a los elementos que tengan la clase activa,
+            es decir, en su atributo `class` tengan la clase sin importar el orden.
+        */
+        /* NOTA: No es específica */
+        .borde-rosa {
+            border: 4px solid hotpink;
+        }
+
+        .texto-verde {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <input type="search" placeholder="Buscar...">
+        <input class="texto-verde" type="text" placeholder="Correo">
+        <input type="text" placeholder="Nombre Usuario">
+        <input type="password" placeholder="Contraseña 1">
+        <!-- 
+            El atributo class="<clase>" establece las clases de diseño
+            separadas por espacio que tendrá el elemento
+        -->
+        <input class="borde-rosa" type="password" placeholder="Contraseña 2">
+        <input class="texto-verde borde-rosa" type="password" placeholder="Contraseña 3">
+    </div>
+
+    <div>
+        <div>
+            <h2>1. Selector por id: <code>#my-image-1 { &lt;reglas ...&gt; }</code></h2>
+            <pre>
+                <code>
+                    &lt;img id="my-image-1" src="https://placekitten.com/180"&gt;
+                </code>
+            </pre>
+            <div>
+                <style>
+                    #my-image-1 {
+                        border-radius: 50%;
+                    }
+                </style>
+                <img id="my-image-1" src="https://placekitten.com/180">
+            </div>
+        </div>
+
+        <div>
+            <h2>2. Selector por clase: <code>.marco { &lt;reglas ...&gt; }</code></h2>
+            <pre>
+                <code>
+                    &lt;img class="marco" src="https://placekitten.com/180"&gt;
+                    &lt;img class="marco" src="https://placekitten.com/160"&gt;
+                </code>
+            </pre>
+            <div>
+                <style>
+                    .marco {
+                        border-radius: 50%;
+                        border: 4px dashed greenyellow;
+                    }
+                </style>
+                <img class="marco" src="https://placekitten.com/180">
+                <img class="marco" src="https://placekitten.com/160">
+            </div>
+        </div>
+
+        <div>
+            <h2>3. Selector por mixto (combinado): <code>img.marco.oscuro { &lt;reglas ...&gt; }</code></h2>
+            <pre>
+                <code>
+                    &lt;img class="marco" src="https://placekitten.com/180"&gt;
+                    &lt;img class="marco" src="https://placekitten.com/160"&gt;
+                </code>
+            </pre>
+            <div>
+                <style>
+                    img.marco.oscuro {
+                        border-radius: 50%;
+                        border: 4px dashed gray;
+                        box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.3);
+                    }
+                </style>
+                <div style="padding: 20px;">
+                    <img class="marco oscuro" src="https://placekitten.com/180">
+                </div>
+                <img class="marco" src="https://placekitten.com/160">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

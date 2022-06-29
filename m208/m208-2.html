@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://placekitten.com/400" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/500" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/600" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/700" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/801" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/900" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/1001" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/1101" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placekitten.com/1203" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="py-3">
+    <button onclick="irUltima()" class="btn btn-outline-primary">Ir a la última</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const carrusel = new bootstrap.Carousel("#carouselExampleControls", {
+        pause: false
+    })
+
+    function irUltima() {
+        carrusel.to(8)
+    }
+</script>

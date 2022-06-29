@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+    <title>Bienvenido</title>
+    <style>
+       body{
+            background-image: url("https://scontent.fhmo1-2.fna.fbcdn.net/v/t31.18172-8/27624628_586583328358834_2796016289267827255_o.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=q3uh4xBxJskAX_7s9hy&_nc_ht=scontent.fhmo1-2.fna&oh=00_AT_rtDxntEwDWFP1n1p7JmITMEbJ4cVy10bNjLkTEyv-LQ&oe=62DFC3A1");
+            background-position: center top;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-color:#ffc107;
+        }
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid ">
+            <i class="fa-solid fa-dumbbell text-warning"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">Acerca de nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      <div class="container  vh-100 w-100 justify-content-center align-items-center py-4">
+        <div class="row p-4">
+            <div class="col-12 col-md-6 py-4">
+                <div class="h-100 d-flex flex-column text-warning">
+                    <h1>Unete a la mejor comunidad de Crossfit</h1>
+                    
+                    <div class="py-4">
+                          <button type="button" class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Reserva tu clase de prueba 
+                          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex w-100 bg-dark py-2 bottom-0 end-0 position-fixed justify-content-center align-items-center">
+        <span class="text-white">52 Elite Fitness Colosio &copy; 2022</span>
+        <span class="px-2 text-warning"  href="https://www.facebook.com/52CommunityWEST/" target="_blank"><i class="fab fa-facebook"></i></span>
+        <span class="px-2 text-warning" href="https://www.instagram.com/community52/?hl=es" target="_blank"><i class="fab fa-instagram"></i></span>
+   
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Reserva tu clase de prueba</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" >
+                <div class="py-2">
+                   <label> <small>Nombre</small> </label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Teclea tu nombre">
+                </div>
+                <div class="py-2">
+                    <small>Selecciona la fecha</small>
+                    <input type="date" class="form-control">
+                </div>
+               <div class="py-2">
+                <small>Selecciona la hora</small>
+                <input type="time" class="form-control">
+               </div> 
+                
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-warning text-white" data-bs-dismiss="modal">Enviar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+</body>
+</html>
