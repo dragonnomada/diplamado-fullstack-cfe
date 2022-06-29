@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <title>Datos de contacto</title>
+
+    <style>
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0px; 
+            padding: 0px; 
+            box-sizing: border-box;
+        }        
+        .app {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(236, 231, 231);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">M2PF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/contact.html">Contacto de la Empresa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="p-2 text-center">
+        <h1>Contacto</h1>        
+    </div>
+
+    <div class="app">
+        <div class="p-5">
+            <form class="flex-grow " action="/api/cfe/contacto" method="post">
+                <input class="form-control" name="usuario" type="text" placeholder="Usuario">
+                <input class="form-control" name="correo" type="email" placeholder="Correo">
+                <!-- TODO: Agrega más campos del formulario de contacto -->
+                <textarea class="form-control" name="mensaje" placeholder="Mensaje" rows="5"></textarea>
+        
+                <input class="btn btn-primary"  type="submit" value="Enviar">
+            </form>
+        </div>
+    
+        <div class="p-2 text-center">
+            <dir>
+                <h2>Estamos ubicados en:</h2>
+            </dir>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3488.5572550932748!2d-110.92974188448325!3d29.030094672725816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce85f58a58b0b5%3A0xa95827d52f7fa958!2sCfe%20Distribucion%20Almacen%20Divisional!5e0!3m2!1ses!2smx!4v1656393671937!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            
+            </div>
+        </div>
+        <div class="text-center">
+            <span>Todos los derechos reservados &copy;</span>
+        </div>    
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
+
+
+
