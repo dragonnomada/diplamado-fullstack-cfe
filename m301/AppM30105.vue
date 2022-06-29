@@ -7,7 +7,7 @@ export default {
             // Estado `title`
             title: "Sín título",
             // Estado `monto`
-            monto: 0,
+            monto: 9999999999.999999,
             fecha: new Date()
         }
     },
@@ -18,11 +18,11 @@ export default {
             const monto = Number(this.monto).toFixed(2)
             const [cifras, decimales] = monto.split(".")
             let formato = ""
-            for (let i = 0; i < cifras.length; i++) {
+            for (let i = cifras.length - 1; i >= 0; i--) {
+                if ((cifras.length - i) % 3 === 1) formato += ","
                 formato += cifras[i]
-                if (i % 3 === 0) formato += ","
             }
-            formato = formato + "." + decimales
+            formato = formato.split('').reverse().join('').replace(/,$/, '') + "." + decimales
             return "$ " + formato + " MXN"
         },
         // Estado `fechaConFormato`
@@ -38,9 +38,9 @@ export default {
     <h1>{{ title }}</h1>
     <!-- one-way: monto -->
     <p>Monto: {{ monto }}</p>
-    <p>Monto: {{ montoPesos }}</p>
-    <p>Monto: {{ fecha }}</p>
-    <p>Monto: {{ fechaConFormato }}</p>
+    <p>Monto con Formato: {{ montoPesos }}</p>
+    <p>Fecha: {{ fecha }}</p>
+    <p>Fecha con Formato: {{ fechaConFormato }}</p>
     <!-- two-way: monto -->
     <input type="number" v-model="monto">
 </template>
