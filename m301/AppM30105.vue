@@ -19,10 +19,11 @@ export default {
             const [cifras, decimales] = monto.split(".")
             let formato = ""
             for (let i = cifras.length - 1; i >= 0; i--) {
-                if ((cifras.length - i) % 3 === 1) formato += ","
+                const j = cifras.length - 1 - i
+                if (j > 0 && j % 3 === 0) formato += ","
                 formato += cifras[i]
             }
-            formato = formato.split('').reverse().join('').replace(/,$/, '') + "." + decimales
+            formato = formato.split('').reverse().join('') + "." + decimales
             return "$ " + formato + " MXN"
         },
         // Estado `fechaConFormato`
