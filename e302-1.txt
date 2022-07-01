@@ -1,0 +1,31 @@
+Ejercicio e302-1
+
+Generar imágenes computadas
+
+* Pueden usar el playground para mayor comodidad
+
+1. Establecer una vista que muestre una imagen
+   enlazando el atributo :src al estado virtual picture
+   * Enlace One-Way por atributo
+
+<template>
+  <img v-bind:src="picture">
+  <!-- <img :src="picture"> -->
+</template>
+
+2. Determinar un estado físico llamado `size`
+
+data() {
+  return {
+    size: 300
+  }
+}
+
+3. Determinar un estado virtual llamado `picture`
+   que genere la ruta "https://place-hold.it/" + this.size
+
+computed: {
+  picture() {
+    return "https://place-hold.it/" + this.size
+  }
+}

@@ -1,0 +1,25 @@
+Ejercicio e302-2
+
+Generar imágenes computadas - Parte II
+
+4. Agregar un botón para aumentar en 100 unidades 
+   al estado `size`
+
+<template>
+  <img :src="picture">
+  <button @click="aumentar(100)">Aumentar</button>
+</template>
+
+5. Definir un método llamado `aumentar(units)` y
+   agregue las unidades a `this.size`
+
+methods: {
+  aumentar(units) {
+    this.size += units
+  }
+}
+
+[BONUS] Agrega otro botón para reducir en 50 unidades
+
+[BONUS 2] Agregar un <input type="range" v-model="size">
+          * Puedes usar los atributos min="100", max="600"
