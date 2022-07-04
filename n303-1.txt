@@ -1,0 +1,25 @@
+Option API -> OOP
+
+export default {
+  data() { return <estado físico> },
+  computed: { <estado virtual>() { ... } },
+  watch: { <estado>(newVal, oldVal) { ... } },
+  method: { <acción>(<parámetros ...>) { ... } },
+  <lifecycle: setup, mounted, unmounted>() { ... }
+} 
+
+-> this.<estado>
+-> this.<acción>
+-> this.$refs.<referencia>
+-> this.$...
+
+Composition API -> FP
+
+const <estado ref> = ref(...)
+const <estado react> = reactive(...)
+
+onMounted(() => { ... })
+onUnmounted(() => { ... })
+
+function <acción>() { ... }
+
