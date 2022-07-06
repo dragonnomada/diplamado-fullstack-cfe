@@ -31,7 +31,7 @@
 <script setup>
 import { ref } from 'vue'
 
-
+// Referencias directas
 const correo = ref('')
 const contraseña = ref('')
 
@@ -55,3 +55,26 @@ function iniciarSesion() {
 }
 
 </script>
+
+<!-- 
+
+  OPTION API (this)
+
+  export default {
+    data() {
+      return {
+        correo: '',
+        contraseña: ''
+      }
+    },
+    methods: {
+      iniciarSesion() {
+        this.$refs.emailControl.disabled = true
+        this.$refs.passwordControl.disabled = true
+        this.$refs.loginButton.disabled = true
+        // TODO: Consumir un API para iniciar sesión real
+      }
+    }
+  }
+
+ -->
