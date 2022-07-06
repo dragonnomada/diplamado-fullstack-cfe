@@ -1,11 +1,15 @@
 <template>
-  <h1>Hola Vue mod</h1>
+  <h1>{{title}}</h1>
   <hr>
   <button @click="saludar()">Pulsame</button>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const title = ref("Hola Vue")
+
 function saludar() {
-  alert("Hola mundo")
+  title.value = "Modificado"
 }
 </script>

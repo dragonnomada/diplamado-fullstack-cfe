@@ -1,0 +1,25 @@
+Ejercicio e304-1
+
+Crear un Proyecto de Vue y modificar App.vue
+
+1. Crea el proyecto en algún lugar
+
+cd Desktop/...
+npm init vue@3
+
+? Project name: mi-proyecto
+
+2. Instala las depedencias de Vue
+
+cd Desktop/.../mi-proyecto
+npm install
+
+3. Ejecuta el proyecto
+
+npm run dev
+
+4. Modifica el archivo App.vue
+
+<template>
+	<h1>Hola mundo</h1>
+</template>
