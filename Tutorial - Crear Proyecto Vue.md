@@ -1,4 +1,4 @@
-> Paso 1 - Generar el proyecto mediante **NPM**
+> **Paso 1** - Generar el proyecto mediante **NPM**
 
 ```bash
 npm init vue@3
@@ -13,14 +13,14 @@ npm init vue@3
 ? Add ESLint for code quality? » No / Yes
 ```
 
-> Paso 2 - Cambiarnos a la carpeta del proyecto e instalar las dependencias
+> **Paso 2** - Cambiarnos a la carpeta del proyecto e instalar las dependencias
 
 ```bash
 cd project-xxxx
 npm install
 ```
 
-> Paso 3 - Probar que funcione el proyecto
+> **Paso 3** - Probar que funcione el proyecto
 
 ```bash
 npm run dev
