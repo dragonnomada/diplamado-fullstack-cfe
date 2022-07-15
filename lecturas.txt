@@ -1,0 +1,11 @@
+Lecturas
+
+1. CRUD NodeJS y Vue
+2. Integración de Maps
+3. Integración de RxJS y Vuex
+4. DevOps Fullstack
+	- Server
+	- Client
+	- Compilación
+	- Distribución
+	- Host Productivo
