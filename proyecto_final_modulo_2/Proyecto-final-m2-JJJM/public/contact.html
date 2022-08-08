@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    
+    <h1></h1>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mr-auto">
+            <h2>Contacto</h2>
+            <p class="mb-5">Si quiere contactarnos envianos si correo y lo atenderemos!</p>
+    
+            <ul class="list-unstyled pl-md-5 mb-5">
+                <li class="d-flex text-black mb-2">
+                    <span class="mr-3">
+                        <span class="icon-map"></span>
+                    </span> 34 Juarez y San Luis, Hermosillo, <br> Mexico
+                </li>
+                <li class="d-flex text-black mb-2"><span class="mr-3"><span class="icon-phone"></span></span> +1 (222) 345 6789</li>
+                <li class="d-flex text-black"><span class="mr-3"><span class="icon-envelope-o"></span></span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="30595e565f705d49475552435944551e535f5d">[email&#160;protected]</a> </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <form class="mb-5" method="post" id="contactForm" name="contactForm" action="/api/cfe/contacto">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                 <label for="name" class="col-form-label">Usuario</label>
+                <input name="usuario" type="text" placeholder="Usuario" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label for="email" class="col-form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Correo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+                    <span class="Enviando"></span>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
