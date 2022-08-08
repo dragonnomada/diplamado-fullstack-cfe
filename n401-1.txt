@@ -1,0 +1,51 @@
+# Instalar Ionic CLI
+
+  npm install -g @ionic/cli
+
+# Crear un proyecto nuevo
+
+  ionic start
+
+  > ionic start app1 blank --type vue
+
+# Abrir proyecto en VSCode
+
+  code app1
+
+# Live Reload (Web)
+
+  ionic serve
+
+# Agregar el Proyecto de Android
+
+  ionic capacitor add android
+
+# Compilar el Proyecto de Android
+
+  ionic capacitor copy android
+  ionic capacitor sync android
+  ionic capacitor build android
+
+# Abrir el proyecto en Android Studio
+
+  ionic capacitor open android
+
+# Agregar el Proyecto de IOS
+
+  ionic capacitor add ios
+
+# Compilar el Proyecto de IOS
+
+  ionic capacitor copy ios
+  ionic capacitor sync ios
+  ionic capacitor build ios
+
+# Abrir el proyecto en XCode
+
+  ionic capacitor open ios
+
+
+
+
+
+
