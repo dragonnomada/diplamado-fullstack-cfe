@@ -1,0 +1,65 @@
+# Configurar Android Studio
+
+1. Android Studio (IDE + ADMINISTRADOR DE EMULADORES AVD)
+
+   - Pesa algunas Gb (~2Gb)
+
+2. Esperar a Gradle (~minutos)
+
+3. Configurar el SDK Manager (API ANDROID)
+
+   - Pesa algunas Gb (~6Gb)
+   - Soporta versiones anteriores o nuevas
+   - Soporta caracterías (Servicios Google)
+
+   >>> Android Studio>Tools>SDK Manager
+
+   * Seleccionar el API e instalarla (Apply)
+
+4. Crear un Emulador/AVD
+
+    - Pesa algunas Gb (~4 Gb)
+
+    >>> Android Studio>Tools>Device Manager
+
+        > Seleccionar Hadware
+        > System Image (API 33 Download)
+        > AVD Name (Algo entendible)
+    
+    * Abrir el emulador en Android Studio (botón play)
+      o en una terminal/cmd 
+        $ emulator -list-avds
+        $ emulator -avd <nombre>
+
+5. Sincronizar el proyecto de Ionic con el Emulador
+
+    - Generar la configuración en capacitor
+	>> capacitor.config.ts
+	---
+	const config: CapacitorConfig = {
+  		appId: 'io.ionic.starter',
+  		appName: 'xxxxxx',
+  		webDir: 'dist',
+  		bundledWebRuntime: false,
+  		server: {
+    			url: "http://<IP>:8100/",
+    			cleartext: true
+  		}
+	};
+	---
+    - Sincronizar el proyecto a android
+        $ ionic capacitor sync android
+    - Abrir el proyecto en Android Studio
+        $ ionic capacitor open android
+    - Ejecutar el Emulador en Android Studio 
+        * (esperar a que instale la aplicación)
+    - Enviar el proyecto al disposivo
+        $ ionic serve --external
+        [ALTERNATIVA] $ ionic capacitor run android -l --external
+
+## Tamaño de Disco:
+
+~2GB Android Studio (Ubicación 1)
+~6GB Android SDK (Ubicación 2)
+~4GB Android Emulator/AVD (Ubicación 3)
+~1GB Otros (Ubicación 4)

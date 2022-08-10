@@ -1,0 +1,27 @@
+# Instalar Ionic
+
+npm install -g @ionic/cli
+
+# Nuevo proyecto
+
+ionic start
+
+ionic start <project> <template> --type vue
+
+# Iniciar Ionic Browser
+
+ionic serve
+
+# Iniciar Ionic IOS/ANDROID
+
+ionic capacitor add ios/android
+
+ionic capacitor copy ios/android
+
+ionic capacitor sync ios/android
+
+ionic capacitor open ios/android
+
+# Compilar y Distribuir
+
+ionic capacitor build ios/android
