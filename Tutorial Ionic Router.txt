@@ -1,0 +1,76 @@
+# IONIC ROUTER
+
+1. Definir los componentes
+
+-- Home.vue
+
+<template>
+  <h1>Hola mundo</h1>
+</template>
+
+-- About.vue
+
+<template>
+  <h1>Acer de nosotros...</h1>
+</template>
+
+...
+
+2. Definir las rutas como un arreglo de objetos { path, component }
+
+-- router/index.js
+
+import Home from "./Home.vue"
+import About from "./About.vue"
+
+const routes = [
+  { path: "/", component: Home },
+  { path: "/about", component: About }
+]
+
+3. Construir el router
+
+-- router/index.js
+
+import { createRouter, createWebHistory } from "@ionic/vue-router"
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+
+export default router
+
+4. Importar y registrar el router
+
+-- main.js
+
+import router from "./router/index.js" // from "./router"
+
+...
+
+app.use(router)
+
+router.isReady().then(() => app.mount("#app"))
+
+5. Establecer el componente IonRouterOutlet
+
+-- App.vue
+
+<template>
+...
+<ion-router-outlet />
+...
+</template>
+
+<script setup>
+import { IonRouterOutlet } from "@ionic/vue"
+</script>
+
+
+
+
+
+
+
+
