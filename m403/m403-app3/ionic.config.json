@@ -1,0 +1,7 @@
+{
+  "name": "m403-app3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
