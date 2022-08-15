@@ -1,0 +1,20 @@
+# Tutorial: Capacitor Plugin - Camera
+
+1. Instalar el plugin
+
+	$ npm install @capacitor/camera
+
+2. Utilizar el plugin dentro del código
+
+---
+import { Camera, CameraResultType } from "@capacitor/camera"
+
+...
+
+const imagen = await Camera.getPhoto({
+  quality: 100,
+  allowEditing: true,
+  resultType: CameraResultType.Uri
+})
+
+console.log(imagen)

@@ -7,7 +7,7 @@
             <ion-list>
               <ion-item>
                 <ion-label>Modificar Perfil</ion-label>
-                <ion-toggle @ionChange="toggleEditing($event)"></ion-toggle>
+                <ion-toggle :checked="editing" @ionChange="toggleEditing($event)"></ion-toggle>
               </ion-item>
             </ion-list>
           </ion-col>
@@ -17,10 +17,10 @@
           <ion-col>
             <div class="camera">
               <ion-thumbnail>
-                <img src="https://placekitten.com/500">
+                <img :src="picture">
               </ion-thumbnail>
               <template v-if="editing">
-                <ion-chip class="float">
+                <ion-chip class="float" @click="tomarFoto()">
                   <ion-label>Cambiar</ion-label>
                   <ion-icon :icon="camera"></ion-icon>
                 </ion-chip>
@@ -73,6 +73,9 @@
 
 DOCS:
 
+Capacitor Plugins
+https://capacitorjs.com/docs/plugins
+
 QRCode
 https://www.npmjs.com/package/qrcode
 npm install --save qrcode
@@ -116,14 +119,17 @@ import {
 
 import QRCode from "qrcode"
 
+import { Camera, CameraResultType } from "@capacitor/camera"
+
 import { ref, watch, onMounted } from "vue"
 
 const canvas = ref(null) // auto-referencia
 
+const picture = ref("https://placekitten.com/400")
 const username = ref("Ana Ming")
 const email = ref("ana.ming@gmail.com")
 
-const editing = ref(false)
+const editing = ref(true)
 
 onMounted(() => {
   QRCode.toCanvas(canvas.value, "mailto:undefined@mail.com", {
@@ -136,6 +142,17 @@ watch(email, () => {
     width: 200
   })
 })
+
+async function tomarFoto() {
+  const result = await Camera.getPhoto({
+    quality: 80,
+    // allowEditing: true,
+    resultType: CameraResultType.Uri
+  })
+  console.log(result) // { webPath, format }
+  // picture.value = result.webPath
+  picture.value = result.dataUrl
+}
 
 async function changeUsername() {
   const alert = await alertController.create({

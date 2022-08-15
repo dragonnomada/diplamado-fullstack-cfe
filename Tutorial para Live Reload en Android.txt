@@ -1,0 +1,33 @@
+# Tutorial: Live Reload Android
+
+1. Configurar el capacitor.config.ts para apuntar al servidor
+
+	---
+	const config: CapacitorConfig = {
+          appId: 'io.ionic.starter',
+          appName: 'm404-app1',
+          webDir: 'dist',
+          bundledWebRuntime: false,
+          server: {
+            url: "http://192.168.XXXX.XXXX:8100/",
+            cleartext: true
+          }
+        };
+	---
+
+2. Encender el servidor en modo externo
+
+	$ ionic serve --external
+
+3. Sincronizar el proyecto en Android
+
+	$ ionic capacitor sync
+
+4. Generar el APK
+
+	$ cd android
+	$ gradlew assembleDebug
+
+5. Instalar el APK en el Emulador
+
+	$ adb -s emulator-5554 install .../appkdebug.apk
