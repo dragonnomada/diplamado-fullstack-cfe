@@ -1,0 +1,30 @@
+# Tutorial para Compilar el APK de un Proyecto de Ionic
+
+1. Generar el proyecto de Android
+
+	$ ionic capacitor add android
+
+2. Compilar el proyecto de Ionic en Android (sincronizar los códigos)
+
+	$ ionic capcitor sync android
+
+3. Generar el APK con Gradle (ensamblar)
+
+	$ cd android
+	$ gradlew assembleDebug
+
+	>>> android/app/build/outputs/apk/debug/app-debug.apk
+
+4. Enviar el APK al dispositivo/emulador
+
+	-- LISTAR EMULADORES --
+	$ emulator -list-avds
+	-- LISTAR DISPOSITVOS (USB/WiFI) --
+	$ adb devices
+
+	-- INSTALAR EL APK --
+	$ adb -s <emulador/dispositivo> install app-debug.apk
+
+	NOTA: Para abrir el emulador hacemos:
+	$ emulator -avd <emulador>
+	

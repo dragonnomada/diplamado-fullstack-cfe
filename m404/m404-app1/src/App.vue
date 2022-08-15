@@ -69,6 +69,29 @@
   </ion-app>
 </template>
 
+<!-- 
+
+DOCS:
+
+QRCode
+https://www.npmjs.com/package/qrcode
+npm install --save qrcode
+
+QRCode.toCanvas(<elemento>, <texto>, <opciones>)
+
+<opciones>
+{
+  type: <value>        Output type                                         [choices: "png", "svg", "utf8"]
+  width: <value>       Image width (px)                                    [number]
+  scale: <value>       Scale factor                                        [number]
+  qzone: <value>       Quiet zone size                                     [number]
+  lightcolor: <value>  Light RGBA hex color
+  darkcolor: <value>   Dark RGBA hex color
+  small: <value>       Output smaller QR code to terminal                  [boolean]
+}
+
+-->
+
 <script setup>
 import {
   alertController,
@@ -93,7 +116,7 @@ import {
 
 import QRCode from "qrcode"
 
-import { ref, onMounted } from "vue"
+import { ref, watch, onMounted } from "vue"
 
 const canvas = ref(null) // auto-referencia
 
@@ -104,6 +127,12 @@ const editing = ref(false)
 
 onMounted(() => {
   QRCode.toCanvas(canvas.value, "mailto:undefined@mail.com", {
+    width: 200
+  })
+})
+
+watch(email, () => {
+  QRCode.toCanvas(canvas.value, `mailto:${email.value}`, {
     width: 200
   })
 })
@@ -142,9 +171,6 @@ async function changeEmail() {
         handler: alertData => {
           console.log(alertData)
           email.value = alertData.email
-          QRCode.toCanvas(canvas.value, `mailto:${email.value}`, {
-            width: 200
-          })
         }
       }
     ],
