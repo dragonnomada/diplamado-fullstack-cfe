@@ -1,0 +1,7 @@
+{
+  "name": "m404-app1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
