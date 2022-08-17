@@ -1,0 +1,7 @@
+{
+  "name": "m405-app4-camera",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

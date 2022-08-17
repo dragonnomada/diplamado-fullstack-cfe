@@ -1,0 +1,7 @@
+{
+  "name": "m405-app3-browser",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
