@@ -1,0 +1,7 @@
+{
+  "name": "m405-app2-network",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
