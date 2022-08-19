@@ -1,0 +1,40 @@
+# Tutorial de Google Cloud
+
+1. Crear un proyecto en la consola de google
+
+https://console.cloud.google.com/
+
+2. Buscar Google Maps Platform
+
+https://console.cloud.google.com/google/maps-apis/overview
+
+3. Ir a la sección API y habilitar las siguientes apis
+
+Geolocation API
+Maps Javascript API
+Maps SDK Android
+Maps SDK IOS
+Places API
+
+4. Ir a la sección de credenciales y crear una nueva Credencial API
+
+AIzaSyDW0Yvw1x1JlOZzN5DFwOZ9cjw337PKags
+
+5. Ir a la credencial y restringirla con las APIs seleccionadas
+
+Geolocation API
+Maps Javascript API
+Maps SDK Android
+Maps SDK IOS
+Places API
+
+> Guardar (ahora la credencial es verde y ya se puede utilizar)
+
+6. Comprobar que esté habilitada la facturación (llenar los formularios de dirección y tarjeta de débito/crédito)
+
+https://console.cloud.google.com/billing
+
+
+
+
+

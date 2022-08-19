@@ -1,0 +1,7 @@
+{
+  "name": "m406-app2-maps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
