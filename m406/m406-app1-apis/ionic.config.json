@@ -1,0 +1,7 @@
+{
+  "name": "m406-app1-apis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
