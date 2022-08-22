@@ -1,0 +1,7 @@
+{
+  "name": "m4tp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
