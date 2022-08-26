@@ -63,3 +63,7 @@
 ~6GB Android SDK (Ubicación 2)
 ~4GB Android Emulator/AVD (Ubicación 3)
 ~1GB Otros (Ubicación 4)
+
+--- Release APK
+
+https://developer.android.com/studio/publish/app-signing#sign-apk

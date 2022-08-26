@@ -1,0 +1,5 @@
+drop database if exists plataforma_anomalias;
+
+create database plataforma_anomalias;
+
+use plataforma_anomalias;

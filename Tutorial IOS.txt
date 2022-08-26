@@ -1,0 +1,101 @@
+# Tutorial Ionic con IOS
+
+--- Instalación y Configuración
+
+1. Instalar XCode (AppStore)
+
+>>> Abrir la AppStore y comenzar la instalación
+    Tamaño 20GB~40GB
+
+    - Abrirlo y aceptar la licencia
+    
+    $ sudo xcodebuild -license accept
+
+2. Instalar Homebrew (Gestor de herramientas)
+
+    REFERECIA: https://brew.sh/index_es
+
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+3. Instalar NodeJS (Última version estable)
+
+    $ brew install node
+
+    # Activa el path de Node
+    $ brew link node
+ 
+    $ node -v
+
+4. Instalar Cocoapods (Son librerías de IOS)
+
+    $ brew install cocoapods
+
+    $ brew link cocoapods
+
+5. Instalar Ionic
+
+    $ npm install -g @ionic/cli
+
+6. Generar un proyecto de prueba
+
+    $ ionic start <mi-proyecto> blank --type vue
+
+7. Iniciar el proyecto
+
+    $ ionic serve
+
+--- Compilación IOS
+
+8. Agregar la plataforma IOS al proyecto
+
+    $ ionic capacitor add ios
+
+    * Genera la carpeta ios con el proyecto de XCode
+
+9. Actualizar el proyecto de IOS
+
+    $ ionic capacitor sync ios
+
+10. Abrir el proyecto en XCode
+
+    $ ionic capacitor open ios
+
+    * Abre el proyecto en XCode
+
+11. Abrir el Info.plist y quitar el Main storyboard
+
+    * A partir de XCode 11
+ 
+    !!! Quitar la clave "Main storyboard file base name"
+
+    * Usando el ícono (-)
+
+    >>> Aquí se pueden agregar permisos que sean necesarios
+
+12. Abrir la información del proyecto
+
+    -> Pulsar el ícono principal que dice App (ícono compás)
+
+    * A partir de XCode 11
+
+    - Dirigirse a TARGETS>App
+    - Main Interface > Seleccionar Main.storyboard
+
+13. Ejecutar en el Simulador (play)
+
+--- Publicar la aplicación en el AppStore
+
+https://ionicframework.com/docs/v1/guide/publishing.html
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,155 @@
+Anomalias (A)
+---------------------------
+ I id_anomalia
+ I id_usuario
+ I id_ubicacion
+*I id_tipo_anomalia
+ I id_qr
+*D publicado
+ D creado
+
+(A) -> (U)
+(A) -> (X)
+(A) -> (T)
+(A) -> (Q)
+
+Evidencias (E)
+---------------------------
+ I id_evidencia
+ I id_anomalia
+ I id_usuario
+ I id_ubicacion
+*I id_estado_anomalia
+*I id_archivo
+*I id_comentario
+ D creado
+
+(E) -* (A)
+(E) -> (U)
+(E) -> (X)
+(E) -* (D)
+(E) -> (F)
+(E) -> (C)
+
+Comentarios (C)
+---------------------------
+ I id_comentario
+*I id_anomalia
+ I id_usuario
+*I id_evidencia
+ T texto
+ D creado
+
+(C) -* (A)
+(C) -* (U)
+(C) -> (E)
+
+Usuarios (U)
+---------------------------
+ I id_usuario
+ T nombre
+ T correo
+ T contraseña
+ T imagen
+ B activo
+ D creado
+ D actualizado
+
+Permisos (P)
+---------------------------
+ I id_permiso
+ T descripcion
+*T codigo
+ B activo
+ D creado
+ D actualizado
+
+Usuario_Permiso (R)
+---------------------------
+ I id_usuario_permiso
+ I id_usuario
+ I id_permiso
+ B activo
+ D creado
+ D actualizado
+
+(U) *-* (P)
+
+Sesiones (S)
+---------------------------
+ I id_sesion
+ I id_usuario
+*T token
+*T codigo
+*T meta
+*D iniciado
+*D expira
+ D creado
+ D actualizado
+
+(S) -> (U)
+
+Tipo_Anomalia (T)
+---------------------------
+ I id_tipo_anomalia
+ T descripcion
+*T codigo
+ D creado
+ D actualizado
+
+Estado_Anomalia (D)
+---------------------------
+ I id_estado_anomalia
+ T descripcion
+*T codigo
+ D creado
+ D actualizado
+
+QR (Q)
+---------------------------
+ I id_qr
+ I id_ubicacion
+ T texto
+ T imagen
+ D creado
+
+(Q) -> (U)
+
+Ubicaciones (X)
+---------------------------
+ I id_ubicacion
+ I id_usuario
+ F latitud
+ F longitud
+*T uuid
+*T info
+
+(X) -> (U)
+ 
+Archivos (F)
+---------------------------
+ I id_archivo
+ I id_usuario
+ I id_ubicacion
+ T ruta
+ T tipo
+*T info
+*T meta
+ D creado
+
+(F) -> (U)
+(F) -> (X)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

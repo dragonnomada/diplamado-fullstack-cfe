@@ -1,0 +1,1 @@
+awk 'FNR==1{print ""}1' sql_*.txt > db.sql

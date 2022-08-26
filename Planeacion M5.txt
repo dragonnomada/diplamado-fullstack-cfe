@@ -1,0 +1,40 @@
+M1 - Javascript | Node JS | Express JS
+
+M2 - HTML | CSS | Bootstrap | Javascript DOM | Bootrap API
+
+M3 - VUE | Options API | Composition API | ...
+
+M4 - Ionic Vue | Capacitor | Android | IOS | Components | Native API
+
+M5 - Proyecto Integral (Cero a Productivo)
+
+Proyecto: Plataforma de Anomalías y Evidencias
+
+En una App se registran anomalías en un mapa común a los usuarios, anexando evidencias sobre la anomalía (captura con cámara, usar ubicación, generación de códigos QR, compartir y notificaciones).
+
+En una Web ver los catálogos de anomalías y estados, usuarios, tablas de anomalías y evidencias registradas con exportación a PDF/Excel más algún gráfico y un mapa de seguimiento.
+
+Sesión: 1 Hora guía + 2 Horas Trabajo
+
+1. [BACKEND] Arquitectura del Proyecto: API, BD, Sesiones y Usuarios
+2. [BACKEND] Generar todas las APIs
+3. [APP] Sesión, Mapa, pines (anomalía) y paneles de evidencias
+4. [APP] Agregar funcionalidad sobre el panel de evidencias
+5. [WEB] Sesión, Catálogos y Tablas
+6. [WEB] Exportación PDF/Excel y Gráficas
+7. [WEB] Mapa de Anomalías y Evidencias
+8. [DEVOPS] Repositorio y Mantenimiento, Despliegue al Servidor, Tecnologías y Patrones de Diseño Avanzados (Redux, RxJS, Ngnix, ...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
