@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const db = require("./services/db")
 const UsuariosService = require("./services/db/usuarios")
 
