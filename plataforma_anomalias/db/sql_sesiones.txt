@@ -1,6 +1,6 @@
 create table Sesiones (
  id_sesion int primary key auto_increment,
- id_usuario int not null unique,
+ id_usuario int not null,
  token varchar(255) not null,
  codigo text,
  meta text,

@@ -7,7 +7,7 @@ use plataforma_anomalias;
 
 create table Anomalias (
  id_anomalia int primary key auto_increment,
- id_usuario int not null unique,
+ id_usuario int not null,
  id_ubicacion int not null unique,
  id_tipo_anomalia int,
  id_qr int not null unique,
@@ -17,7 +17,7 @@ create table Anomalias (
 
 create table Archivos (
  id_archivo int primary key auto_increment,
- id_usuario int not null unique,
+ id_usuario int not null,
  id_ubicacion int not null unique,
  ruta varchar(255) not null,
  tipo varchar(255) not null,
@@ -46,7 +46,7 @@ create table Estado_Anomalia (
 create table Evidencias (
  id_evidencia int primary key auto_increment,
  id_anomalia int not null,
- id_usuario int not null unique,
+ id_usuario int not null,
  id_ubicacion int not null unique,
  id_estado_anomalia int,
  id_archivo int,
@@ -73,7 +73,7 @@ create table QR (
 
 create table Sesiones (
  id_sesion int primary key auto_increment,
- id_usuario int not null unique,
+ id_usuario int not null,
  token varchar(255) not null,
  codigo text,
  meta text,
@@ -93,7 +93,7 @@ create table Tipo_Anomalia (
 
 create table Ubicaciones (
  id_ubicacion int primary key auto_increment,
- id_usuario int not null unique,
+ id_usuario int not null,
  latitud double not null,
  longitud double not null,
  uuid varchar(255),
