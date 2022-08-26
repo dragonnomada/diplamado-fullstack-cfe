@@ -5,5 +5,5 @@ create table Anomalias (
  id_tipo_anomalia int,
  id_qr int not null unique,
  publicado timestamp,
- creado timestamp not null
+ creado timestamp not null default now()
 );

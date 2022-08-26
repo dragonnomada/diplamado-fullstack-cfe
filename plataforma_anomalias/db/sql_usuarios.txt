@@ -5,6 +5,6 @@ create table Usuarios (
  contraseña varchar(60) not null,
  imagen text not null,
  activo bool not null,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );

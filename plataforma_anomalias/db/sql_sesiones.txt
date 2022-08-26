@@ -6,6 +6,6 @@ create table Sesiones (
  meta text,
  iniciado timestamp,
  expira timestamp,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );

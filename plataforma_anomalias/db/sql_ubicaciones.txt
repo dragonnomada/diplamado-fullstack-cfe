@@ -4,5 +4,6 @@ create table Ubicaciones (
  latitud double not null,
  longitud double not null,
  uuid varchar(255),
- info text
+ info text,
+ creado timestamp not null default now()
 );

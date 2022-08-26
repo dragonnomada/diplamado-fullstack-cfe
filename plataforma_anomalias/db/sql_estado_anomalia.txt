@@ -3,5 +3,5 @@ create table Estado_Anomalia (
  descripcion varchar(250),
  codigo text,
  creado timestamp not null,
- actualizado timestamp
+ actualizado timestamp default now()
 );

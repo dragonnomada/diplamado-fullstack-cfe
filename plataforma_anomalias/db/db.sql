@@ -12,7 +12,7 @@ create table Anomalias (
  id_tipo_anomalia int,
  id_qr int not null unique,
  publicado timestamp,
- creado timestamp not null
+ creado timestamp not null default now()
 );
 
 create table Archivos (
@@ -23,7 +23,7 @@ create table Archivos (
  tipo varchar(255) not null,
  info text,
  meta text,
- creado timestamp
+ creado timestamp default now()
 );
 
 create table Comentarios (
@@ -32,7 +32,7 @@ create table Comentarios (
  id_usuario int not null,
  id_evidencia int unique,
  texto varchar(250) not null,
- creado timestamp not null
+ creado timestamp not null default now()
 );
 
 create table Estado_Anomalia (
@@ -40,7 +40,7 @@ create table Estado_Anomalia (
  descripcion varchar(250),
  codigo text,
  creado timestamp not null,
- actualizado timestamp
+ actualizado timestamp default now()
 );
 
 create table Evidencias (
@@ -51,7 +51,7 @@ create table Evidencias (
  id_estado_anomalia int,
  id_archivo int,
  id_comentario int,
- creado timestamp not null
+ creado timestamp not null default now()
 );
 
 create table Permisos (
@@ -59,7 +59,7 @@ create table Permisos (
  descripcion varchar(250) not null,
  codigo text,
  activo bool not null,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );
 
@@ -68,7 +68,7 @@ create table QR (
  id_ubicacion int not null unique,
  texto text,
  imagen text,
- creado timestamp not null
+ creado timestamp not null default now()
 );
 
 create table Sesiones (
@@ -79,7 +79,7 @@ create table Sesiones (
  meta text,
  iniciado timestamp,
  expira timestamp,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );
 
@@ -87,7 +87,7 @@ create table Tipo_Anomalia (
  id_estado_anomalia int primary key auto_increment,
  descripcion varchar(250),
  codigo text,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );
 
@@ -97,7 +97,8 @@ create table Ubicaciones (
  latitud double not null,
  longitud double not null,
  uuid varchar(255),
- info text
+ info text,
+ creado timestamp not null default now()
 );
 
 create table Usuario_Permiso (
@@ -105,7 +106,7 @@ create table Usuario_Permiso (
  id_usuario int not null,
  id_permiso int not null,
  activo bool not null,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );
 
@@ -116,6 +117,6 @@ create table Usuarios (
  contraseña varchar(60) not null,
  imagen text not null,
  activo bool not null,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );

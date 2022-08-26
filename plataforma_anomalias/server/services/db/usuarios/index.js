@@ -14,7 +14,15 @@ async function inactivos() {
     return rows
 }
 
+async function nuevo({ nombre, correo, contraseña, imagen, activo }) {
+    const sql = "INSERT INTO usuarios (nombre, correo, contraseña, imagen, activo) VALUES (?, ?, ?, ?, ?)"
+    const params = [nombre, correo, contraseña, imagen || "default.png", !!activo]
+    const [result] = await db.execute(sql, params)
+    return result.insertId
+}
+
 module.exports = {
     activos,
-    inactivos
+    inactivos,
+    nuevo
 }

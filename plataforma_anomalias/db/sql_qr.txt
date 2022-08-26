@@ -3,5 +3,5 @@ create table QR (
  id_ubicacion int not null unique,
  texto text,
  imagen text,
- creado timestamp not null
+ creado timestamp not null default now()
 );

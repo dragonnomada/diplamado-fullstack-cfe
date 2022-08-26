@@ -3,6 +3,6 @@ create table Permisos (
  descripcion varchar(250) not null,
  codigo text,
  activo bool not null,
- creado timestamp not null,
+ creado timestamp not null default now(),
  actualizado timestamp
 );

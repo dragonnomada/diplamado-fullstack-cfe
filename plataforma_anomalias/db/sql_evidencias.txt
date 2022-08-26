@@ -6,5 +6,5 @@ create table Evidencias (
  id_estado_anomalia int,
  id_archivo int,
  id_comentario int,
- creado timestamp not null
+ creado timestamp not null default now()
 );
