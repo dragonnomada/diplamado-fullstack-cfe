@@ -1,0 +1,150 @@
+# Módulo 5 Sesión 1 - [Backend] Implementar los Servicios a Base de Datos en Node JS
+
+1. Crear un proyecto de Node JS llamado Servidor
+
+  $ mkdir server
+  $ cd server
+  $ npm init -y
+
+  # Se creará un archivo llamado package.json en la carpeta `server`
+
+2. Crear un archivo index.js principal del proyecto/servidor
+
+  $ echo > index.js
+  --- index.js
+  // TODO: Código principal
+  ---
+
+3. Crear la caperta de servicios y los servicios a la base de datos
+
+  $ mkdir services
+  $ mkdir services\db
+  $ echo > services\db\index.js
+  $ mkdir services\db\usuarios
+  $ echo > services\db\usuarios\index.js
+  $ mkdir services\db\permisos
+  $ echo > services\db\permisos\index.js
+  $ mkdir services\db\sesiones
+  $ echo > services\db\sesiones\index.js
+  $ mkdir services\db\ubicaciones
+  $ echo > services\db\ubicaciones\index.js
+  ...
+
+4. Crear el servicio principal de base de datos `DBService`
+
+  $ npm install --save mysql2
+  --- services\db\index.js
+  const mysql = require("mysql2/promise")
+
+  let connection = null
+
+  async function connect() {
+    connection = await mysql.createConnection({
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      password: "password",
+      database: "plataforma_anomalias"
+    })
+  }
+
+  async function disconnect() {
+    if (!connection) throw Error("No hay conexión a la base de datos")
+    await connection.end()
+  }
+
+  async function execute(sql, params) {
+    if (!connection) throw Error("No hay conexión a la base de datos")
+    const [rows] = await connection.execute(sql, params)
+    return rows
+  }
+
+  module.exports = {
+    connect,
+    disconnect,
+    execute
+  }
+  ---
+
+5. Probar el Servicio de la Base de Datos
+
+  --- @index.js
+  const DBService = require("./services/db")
+
+  DBService.connect().then(async () => {
+    console.log("Conectado a la base de datos")
+
+    const rows = await DBService.execute("SELECT NOW() AS FECHA_ACTUAL")
+
+    console.log(rows)
+
+    await DBService.disconnect()
+
+    console.log("Desconectado de la base de datos")
+  })
+  ---
+
+6. Crear el Servicio de Usuarios `UsuarioService`
+
+  --- services\db\usuarios\index.js
+  const DBService = require("../../db")
+
+  async function activos() {
+    const sql = "SELECT * FROM usuarios WHERE activo=?"
+    const params = [true]
+    const usuarios = await DBService.execute(sql, params)
+    return usuarios
+  }
+
+  async function inactivos() {
+    const sql = "SELECT * FROM usuarios WHERE activo=?"
+    const params = [false]
+    const usuarios = await DBService.execute(sql, params)
+    return usuarios
+  }
+
+  async function nuevo(nombre, correo, contraseña, imagen, activo) {
+    const sql = "INSERT INTO usuarios (nombre, correo, contraseña, imagen, activo) VALUES (?, ?, ?, ?, ?)"
+    const params = [nombre, correo, contraseña, imagen, activo]
+    const result = await DBService.execute(sql, params)
+    return result.insertId
+  }
+
+  // ...
+
+  module.exports = {
+    activos,
+    inactivos,
+    nuevo
+  }
+  ---
+
+7. Probar el Servicio de Usuarios `UsuarioService`
+
+  --- @index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
