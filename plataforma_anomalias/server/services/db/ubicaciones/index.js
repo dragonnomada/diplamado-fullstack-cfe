@@ -7,6 +7,15 @@ async function nuevo(id_usuario, latitud, longitud, uuid, info) {
     return result.insertId
 }
 
+async function info(id_ubicacion) {
+    const sql = "SELECT * FROM ubicaciones WHERE id_ubicacion = ?"
+    const params = [id_ubicacion]
+    const [rows] = await db.execute(sql, params)
+    const ubicacion = rows[0]
+    return ubicacion
+}
+
 module.exports = {
-    nuevo
+    nuevo,
+    info
 }

@@ -1,25 +1,33 @@
+// npm install --save express
+// npm install --save mysql2
+// npm install --save cors
+// npm install --save dotenv
+
 require("dotenv").config()
 
+const http = require("http")
+const express = require("express")
+const cors = require("cors")
+
 const db = require("./services/db")
-const UsuariosService = require("./services/db/usuarios")
+
+const AuthLoginApi = require("./api/auth/login")
+const AnomaliasApi = require("./api/anomalias")
+
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+app.use(AuthLoginApi)
+app.use(AnomaliasApi)
 
 db.connect().then(async () => {
-    const usuarios_activos = await UsuariosService.activos()
-    const usuarios_inactivos = await UsuariosService.inactivos()
-
-    console.log(usuarios_activos)
-    console.log(usuarios_inactivos)
-
-    const usuario_id = Math.random().toString(16).slice(2)
-
-    const insertId = await UsuariosService.nuevo({
-        nombre: `usu${usuario_id}`,
-        correo: `usu${usuario_id}@test.com`,
-        contraseña: `usu${usuario_id}_123`,
-        activo: Math.random() >= 0.5
+    console.log("Se ha conectado a la base de datos")
+    const server = http.createServer(app)
+    server.listen(5000, () => {
+        console.log("Servidor iniciado en http://localhost:5000/")
+        console.log("Presiona [ctrl+c] para finalizar")
     })
-
-    console.log(insertId)
-
-    await db.disconnect()
 }).catch(error => console.log(error))
