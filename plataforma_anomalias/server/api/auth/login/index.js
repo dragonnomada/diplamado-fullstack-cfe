@@ -70,7 +70,7 @@ router.post("/auth/login", async (request, response) => {
         return
     }
 
-    response.status(401).json({
+    response.status(200).json({
         error: false,
         message: null,
         correo: correo,
