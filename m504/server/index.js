@@ -13,6 +13,9 @@ const db = require("./services/db")
 
 const AuthLoginApi = require("./api/auth/login")
 const AnomaliasApi = require("./api/anomalias")
+const AnomaliasPublicarApi = require("./api/anomalias/publicar")
+const AnomaliasTiposApi = require("./api/anomalias/tipos")
+const AnomaliasTiposNuevoApi = require("./api/anomalias/tipos/nuevo")
 
 const app = express()
 
@@ -22,6 +25,9 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(AuthLoginApi)
 app.use(AnomaliasApi)
+app.use(AnomaliasPublicarApi)
+app.use(AnomaliasTiposApi)
+app.use(AnomaliasTiposNuevoApi)
 
 db.connect().then(async () => {
     console.log("Se ha conectado a la base de datos")
