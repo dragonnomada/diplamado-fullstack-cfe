@@ -17,7 +17,7 @@
 import { ref } from 'vue'
 
 // TODO: Crear una función en el servicio
-// que envíe los datos de la anomalía al server
+// que envíe los datos del usuario al server
 import { fetchNuevoUsuario } from "../services/usuarios"
 
 const nombre = ref("")
