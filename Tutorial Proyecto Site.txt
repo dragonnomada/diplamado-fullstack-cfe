@@ -1,0 +1,24 @@
+# Tutorial Proyecto Site
+
+1. Crear el proyecto
+
+$ npm init vue@3
+
+Project name? site
+...
+Vue Router? yes
+
+2. Instalar las dependencias
+
+$ cd site
+$ npm install
+
+3. Ejecutar el proyecto
+
+$ npm run dev
+
+4. Compilar el proyecto
+
+$ npm run build
+
+* Nos genera la carpeta /dist con el proyecto listo para incrustarse un servidor productivo o en otros frameworks

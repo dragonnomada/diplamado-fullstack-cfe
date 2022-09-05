@@ -1,0 +1,21 @@
+# Tutorial Proyecto Site - Google Maps
+
+1. Instalar la librería
+
+DOCS: https://www.npmjs.com/package/vue3-google-map
+
+$ npm install vue3-google-map
+
+2. Importar el componente GoogleMap
+
+<script setup>
+import { GoogleMap } from 'vue3-google-map'
+
+3. Usar el componente de GoogleMap
+
+<template>
+	<GoogleMap
+		api-key="XYZ..."
+		style="width: 100%; height: 300px"
+		:center="{ lat: 123, lng: 456 }"
+		:zoom="17">
