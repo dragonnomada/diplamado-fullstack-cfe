@@ -7,6 +7,9 @@ import HelloWorld from './components/HelloWorld.vue'
   <header>
     <img alt="Vue logo" class="logo" src="https://thumbs.dreamstime.com/b/demo-demo-icon-139882881.jpg" width="125" height="125" />
 
+    <!-- Bootstrap a través de las clases -->
+    <button class="btn btn-primary">Hola</button>
+
     <div class="wrapper">
       <HelloWorld msg="Plataforma de Anomalías" />
 
