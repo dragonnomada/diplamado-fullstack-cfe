@@ -10,9 +10,20 @@
     "datatables.net-bs5": "^1.12.1",
     "datatables.net-select": "^1.4.0",
     "datatables.net-vue3": "^1.0.0",
+    "exceljs": "^4.3.0",
+    "export-from-json": "^1.6.0",
+    "general-export": "^0.0.2",
+    "json2xlsx-export": "^1.2.2",
+    "jspdf": "^2.5.1",
+    "sass": "^1.54.8",
     "vue": "^3.2.38",
+    "vue-export-excel-html": "^1.0.15",
+    "vue-html2pdf": "^1.8.0",
+    "vue-json-excel": "^0.3.0",
     "vue-router": "^4.1.5",
-    "vue3-google-map": "^0.15.0"
+    "vue3-google-map": "^0.15.0",
+    "vue3-html2pdf": "^1.1.2",
+    "vue3-json-excel": "^1.0.10-alpha"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
