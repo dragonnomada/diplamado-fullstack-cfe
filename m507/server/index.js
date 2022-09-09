@@ -2,6 +2,8 @@ const http = require("http")
 
 // npm install express
 const express = require("express")
+// npm install cors
+const cors = require("cors")
 
 const apiEvidencias = require("./api/evidencias")
 const apiEvidenciasNueva = require("./api/evidencias/nueva")
@@ -10,6 +12,9 @@ const apiEvidenciasNueva = require("./api/evidencias/nueva")
 const app = express()
 
 app.use(express.static("public"))
+app.use(cors())
+app.use(express.json({ limit: "10mb" }))
+
 app.use(apiEvidencias)
 app.use(apiEvidenciasNueva)
 
