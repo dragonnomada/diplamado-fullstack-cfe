@@ -3,7 +3,7 @@ import { ref } from "vue"
 export const evidencias = ref([])
 
 export async function getEvidencias() {
-    const url = `http://localhost:5000/api/evidencias`
+    const url = `http://3.129.72.124/api/evidencias`
     try {
         const response = await fetch(url)
 

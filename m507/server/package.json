@@ -2,9 +2,14 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
+  "bin": "index.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pkg": {
+    "targets": [ "node16-linux-x64", "node16-win-x64" ],
+    "outputPath": "dist"
   },
   "keywords": [],
   "author": "",
